@@ -1,0 +1,16 @@
+.appNav {
+  position: relative !important;
+  padding: 0px 25px !important;
+  top: 0 !important;
+  z-index: 999 !important;
+  width: 60% !important;
+  margin: auto !important;
+  clip-path: polygon(10% 0%, 90% 0%, 100% 50%, 90% 100%, 10% 100%, 0% 50%);
+}
+
+@media only screen and (max-width: 767px) {
+  .appNav {
+  width: 100% !important;
+}
+
+}

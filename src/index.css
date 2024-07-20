@@ -1,0 +1,9 @@
+body, *{
+      font-family: 'Inter', sans-serif !important; /* الافتراضي للعربية */
+    }
+
+    /* اللغة الإنجليزية */
+    body:lang(en)
+    , *:lang(en) {
+      font-family: 'Signika', sans-serif !important;
+    }
