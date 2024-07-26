@@ -4,15 +4,17 @@ import LoadingPage from '../global/LoadingPage';
 const NavBar1 = lazy(() => import('./Navbar1'));
 const NavBar2 = lazy(() => import('./Navbar2'));
 const NavBar3 = lazy(() => import('./Navbar3'));
+const NavBar4 = lazy(() => import('./Navbar4'));
 
 const NavBar = () => {
 
     const renderNavbar = () => {
-        const data = { navbarSection: 'navbar1', }
+        const data = { navbarSection: 'navbar4', }
         switch (data.navbarSection) {
             case 'navbar1': return <NavBar1 />;
             case 'navbar2': return <NavBar2 />;
             case 'navbar3': return <NavBar3 />;
+            case 'navbar4': return <NavBar4 />;
             default: return null;
         }
     };
