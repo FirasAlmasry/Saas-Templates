@@ -1,11 +1,7 @@
 import { Box, CardMedia } from '@mui/material'
 import React from 'react'
-import i18next from 'i18next';
-
 
 const Image = ({img}) => {
-
-    let lng = i18next.language
 
     return (
         <Box position="relative">
@@ -16,7 +12,7 @@ const Image = ({img}) => {
                         content: '""',
                         position: 'absolute',
                         top: '10%',
-                        left: lng === 'en' ? '100%' : 0,
+                        left: '100%',
                         transform: 'translateX(-75%) rotate(270deg)',
                         borderWidth: '0 100px 100px 100px', // Adjust based on your requirement
                         borderStyle: 'solid',

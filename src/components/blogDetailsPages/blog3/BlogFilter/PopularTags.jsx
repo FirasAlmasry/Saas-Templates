@@ -1,8 +1,10 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
-import theme from '../../../../utils/theme';
+import { useTheme } from '@mui/material/styles';
 
 const PopularTags = () => {
+            const theme = useTheme();
+
     return (
         <>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1, alignItems: 'flex-start', py: 2, border: '1px solid #ddd', borderRadius: '16px' }} >

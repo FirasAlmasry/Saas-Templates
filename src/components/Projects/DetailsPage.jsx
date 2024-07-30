@@ -11,13 +11,14 @@ import Image from '../global/images';
 
 const DetailsPage = () => {
 
+    const Project = { descriptionSection: 'Image3', projectSection: 'Card2', }
 
     return (
         <>
             <WrapperSection title={'Project'} >
                 <Grid container spacing={2}>
                     <Grid item md={4} xs={12}>
-                        <Image image={projectImage} />
+                        <Image nameSection={Project} image={projectImage} />
                     </Grid>
                     <Grid item md={8} xs={12}>
                         <Description
@@ -30,7 +31,7 @@ const DetailsPage = () => {
             </WrapperSection>
             <WrapperSection title={`Other projects`} >
                 {projects && <GridItems data={projects} slices={3}
-                    render={(project) => <Grid item md={4} xs={12} key={project?.id} ><Card project={project}/></Grid>} />}
+                    render={(project) => <Grid item md={4} xs={12} key={project?.id} ><Card nameSection={Project} project={project}/></Grid>} />}
             </WrapperSection>
         </>
     )

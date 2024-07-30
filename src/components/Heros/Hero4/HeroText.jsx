@@ -1,11 +1,11 @@
 import { Box, styled, Typography, useMediaQuery } from '@mui/material'
 import React from 'react'
+// import theme from '../../../utils/theme';
 import Btn from '../../global/Buttons/Btn'
-import { useTheme as themeMobile } from '@emotion/react'
+import { useTheme } from '@emotion/react'
 
 const HeroText = ({ title, desc, btn }) => {
-
-    const themeM = themeMobile();
+    const themeM = useTheme();
     const isMobile = useMediaQuery(themeM.breakpoints.down('sm'));
 
     const StyledBox = styled(Box)(({ theme }) => ({
@@ -24,7 +24,6 @@ const HeroText = ({ title, desc, btn }) => {
             margin: 'auto',
         },
     }));
-
     return (
         <>
             <StyledBox>

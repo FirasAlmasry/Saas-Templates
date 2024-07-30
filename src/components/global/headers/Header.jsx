@@ -6,7 +6,7 @@ const Header3 = lazy(() => import('./Header3'));
 
 const Header = () => {
 
-    const data = { headerSection: 'header3', }
+    const data = { headerSection: 'header1', }
 
     const renderHeader = () => {
         switch (data.headerSection) {

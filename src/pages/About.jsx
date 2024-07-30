@@ -8,13 +8,13 @@ import Header from '../components/global/headers/Header';
 import Intro from '../components/AboutUs/Introductions';
 
 const About = () => {
-
+  const about = { introSection: 'Introduction3', goalSection: 'Card3',}
   return (
     <>
       <Header />
-      <Intro />
+      <Intro nameSection={about}/>
       <Missions />
-      <Goals />
+      <Goals nameSection={about} />
       <Visions />
     </>
   )

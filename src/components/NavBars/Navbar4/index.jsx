@@ -8,19 +8,20 @@ import logo from './../../../assets/Logo/logo.png'
 import './Nav.css'
 import i18next from "i18next";
 import { Pages } from "../../../constants";
-import theme from "../../../utils/theme";
+import { useTheme } from '@mui/material/styles';
+import DarkModeToggle from "../../global/DarkModeToggle";
 
 function NavBar() {
+      const theme = useTheme();
 
     const StyledLink = styled(Link)(({ theme }) => ({
         textDecoration: "none",
         fontSize: 18,
         textTransform: 'capitalize',
-        fontWeight: 'bold',
-        color: theme.palette.secondary.main,
+       color: theme.palette.nav.link,
         transition: '0.5s',
         '&:hover': {
-            color: theme.palette.primary.main,
+            color: theme.palette.nav.hover,
             textDecoration: 'underline',
         },
     }));
@@ -30,7 +31,7 @@ function NavBar() {
         '&::before': {
             content: '""',
             display: 'inline-block',
-            backgroundImage: `linear-gradient(to right, ${theme.palette.background.navbar} 100%, transparent calc(50% + 60px))`,
+            backgroundImage: `linear-gradient(to right, ${theme.palette.nav.main} 100%, transparent calc(50% + 60px))`,
             position: 'absolute',
             width: '100%',
             height: '6rem',
@@ -60,7 +61,7 @@ function NavBar() {
                     top:0,
                     zIndex: 999, 
                     backgroundColor:'transparent'
-                }} sx={{ backgroundColor: theme.palette.background.navbar }}>
+                }} sx={{ backgroundColor: theme.palette.nav.main }}>
                 <StyledDiv language={lng} ></StyledDiv>
                     <Container maxWidth="xl">
                     <Toolbar disableGutters>
@@ -80,6 +81,7 @@ function NavBar() {
                                     alignItems: 'center',
                                     width: '60%'
                                 }}>
+                                <DarkModeToggle />
                                 <TransLang />
                                 {
                                     Pages?.map((page, i) => <StyledLink

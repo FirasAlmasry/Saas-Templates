@@ -1,23 +1,14 @@
-import React, { lazy, Suspense } from 'react'
+import React, { Suspense } from 'react'
 import LoadingPage from '../../global/LoadingPage'
+import importComponent from '../../../utils/importComponent';
 
-const Card1 = lazy(() => import('./Card1'))
-const Card2 = lazy(() => import('./Card2'))
+const Card = ({ project, nameSection }) => {
 
-const Card = ({ project }) => {
-
-    const renderProjectSection = () => {
-        const data = { projectSection: 'project1', }
-        switch (data.projectSection) {
-            case 'project1': return <Card1 projects={project} />;
-            case 'project2': return <Card2 projects={project} />;
-            default: return null;
-        }
-    }
+    const Component = importComponent(`/Projects/cards/${nameSection.projectSection}`);
 
     return (
         <Suspense fallback={<LoadingPage />}>
-            {renderProjectSection()}
+            <Component projects={project} />
         </Suspense>
     )
 }

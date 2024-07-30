@@ -1,10 +1,11 @@
-import { CardMedia, useMediaQuery } from '@mui/material';
+import { Box, CardMedia, useMediaQuery } from '@mui/material';
 import React from 'react'
 import Carousel from "react-material-ui-carousel";
 import slideImg from './../../../assets/Hero/slider.png'
 import la from './../../../assets/Hero/leftAr.png'
 import ra from './../../../assets/Hero/rightar.png'
 import { useTheme } from '@emotion/react';
+import HeroText from './HeroText';
 
 const Sliders = () => {
     const themeM = useTheme();
@@ -34,18 +35,21 @@ const Sliders = () => {
                 navButtonsAlwaysVisible={!isMobile && true}
             >
                 {images?.map((img, i) =>
-                    <CardMedia
-                        key={i}
-                        sx={{
-                            height: {
-                                md: "85dvh", xs: "50dvh",
-                            },
-                            width: "100%",
-                            objectFit: "cover",
-                        }}
-                        component="img"
-                        alt={img}
-                        src={img} />)}
+                    <Box key={i} sx={{ zIndex: 999 }}>
+                        <HeroText title={`title template four Here`} desc={`description template four Here`} btn={`see more`} />
+                        <CardMedia
+                            key={i}
+                            sx={{
+                                height: {
+                                    md: "85dvh", xs: "50dvh",
+                                },
+                                width: "100%",
+                                objectFit: "cover",
+                            }}
+                            component="img"
+                            alt={img}
+                            src={img} />
+                    </Box>)}
             </Carousel>
         </>
     )

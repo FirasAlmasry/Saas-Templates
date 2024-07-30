@@ -48,7 +48,7 @@ const Card3 = ({ blogs = {} }) => {
                     >
                         {title}
                     </Typography>
-                    <Typography color={'secondary.supMain'} variant="subtitle1">
+                    <Typography color={'secondary.text'} variant="subtitle1">
                         {type}, {date}
                     </Typography>
                 </CardContent>

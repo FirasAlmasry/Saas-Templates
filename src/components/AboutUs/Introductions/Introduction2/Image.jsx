@@ -1,8 +1,10 @@
 import { Box, CardMedia } from '@mui/material'
 import React from 'react'
-import theme from '../../../../utils/theme'
+import { useTheme } from '@mui/material/styles';
 
 const Image = ({ img }) => {
+        const theme = useTheme();
+
     return (
         <>
             <Box sx={{mx:2}}>

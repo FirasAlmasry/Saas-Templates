@@ -1,8 +1,9 @@
 import { Box, CardMedia, Typography } from '@mui/material'
 import React from 'react'
-import theme from '../../../../utils/theme'
+import { useTheme } from '@mui/material/styles';
 
 const Card3 = ({ goals }) => {
+    const theme = useTheme();
 
     const { img, title, description } = goals
     return (

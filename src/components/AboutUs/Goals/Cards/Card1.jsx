@@ -1,8 +1,14 @@
 import React from 'react'
 import { Box, Typography } from '@mui/material';
-import theme from '../../../../utils/theme';
+import { useTheme } from '@mui/material/styles';
 const Card1 = ({ goals }) => {
+    const theme = useTheme();
 
+    const Num = {
+        color: theme.palette.primary.main,
+        fontSize: '32px',
+        fontStyle: 'italic',
+    }
     const { id, title, description } = goals
 
     return (
@@ -18,10 +24,6 @@ const Card1 = ({ goals }) => {
     )
 }
 
-const Num = {
-    color: theme.palette.primary.main,
-    fontSize: '32px',
-    fontStyle: 'italic',
-}
+
 
 export default Card1

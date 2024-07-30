@@ -1,9 +1,11 @@
 import { Button } from '@mui/material'
 import React from 'react'
-import theme from '../../../utils/theme'
+import { useTheme } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 const Btn = ({ bg, color, text = 'See More', path, type = 'button', width= 'fit-content' }) => {
-    const navigate = useNavigate()
+    const navigate = useNavigate() 
+    const theme = useTheme();
+
     return (
         <>
             <Button

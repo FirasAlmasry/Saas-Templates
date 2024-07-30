@@ -1,10 +1,12 @@
 import { CardContent, CardMedia, Typography, Card as MuiCard } from '@mui/material'
 import React from 'react'
-import theme from '../../../utils/theme';
+import { useTheme } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 import i18next from 'i18next';
 
-const Card1 = ({ projects }) => {
+const Card1 = ({ projects }) => {    
+    const theme = useTheme();
+
     const { id, description, img } = projects || {};
     const navigate = useNavigate()
     let lng = i18next.language

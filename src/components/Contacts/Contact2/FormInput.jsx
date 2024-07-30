@@ -1,8 +1,10 @@
 import { InputLabel } from '@mui/material'
 import React from 'react'
-import theme from '../../../utils/theme'
+import { useTheme } from '@mui/material/styles';
 
 const FormInput = ({ label, type }) => {
+        const theme = useTheme();
+
     return (
         <>
             <InputLabel htmlFor={type} sx={{ my: 1 }} >

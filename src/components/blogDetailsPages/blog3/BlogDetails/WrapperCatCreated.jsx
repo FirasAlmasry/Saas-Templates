@@ -15,7 +15,7 @@ const WrapperCatCreated = ({icon, text}) => {
                   src={icon}
               />
             }
-              <Typography color={'secondary.supMain'} >{text}</Typography>
+              <Typography color={'secondary.text'} >{text}</Typography>
           </Box>
     </>
   )

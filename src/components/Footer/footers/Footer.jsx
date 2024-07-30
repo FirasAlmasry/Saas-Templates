@@ -8,7 +8,7 @@ const Footer3 = lazy(() => import('./Footer3'));
 
 const Footer = () => {
     const renderFooter = () => {
-        const data = { footerSection: 'footer1', }
+        const data = { footerSection: 'footer3', }
         switch (data.footerSection) {
             case 'footer1':
                 return <Footer1 />;

@@ -8,6 +8,7 @@ import i18next from "i18next";
 import { IconButton } from "@mui/material";
 import logo from './../../../assets/Logo/logo.png'
 import CloseIcon from '@mui/icons-material/Close';
+import DarkModeToggle from "../../global/DarkModeToggle";
 
 export default function NavDrawer({ setDrawer, drawer }) {
     let lng = i18next.language
@@ -17,10 +18,10 @@ export default function NavDrawer({ setDrawer, drawer }) {
         fontSize: 14,
         textTransform: 'capitalize',
         fontWeight: 'bold',
-        color: theme.palette.secondary.main,
+        color: theme.palette.nav.link,
         transition: '0.5s',
         '&:hover': {
-            color: theme.palette.primary.main,
+            color: theme.palette.nav.hover,
             textDecoration: 'underline',
         },
     }));
@@ -65,13 +66,14 @@ export default function NavDrawer({ setDrawer, drawer }) {
                         </Box>
                         {Pages?.map((page, i) => (
                             <StyledLink
-                                    key={i}
-                                    to={page.path}
-                                    onClick={() => setDrawer(false)}>
-                                    {lng === 'ar' ? page.name : page.name_en}
+                                key={i}
+                                to={page.path}
+                                onClick={() => setDrawer(false)}>
+                                {lng === 'ar' ? page.name : page.name_en}
                             </StyledLink>
-                            ))}
+                        ))}
                         <TransLang />
+                        <DarkModeToggle />
                     </Box>
                 </Drawer>
             </React.Fragment>

@@ -7,15 +7,13 @@ import { services } from '../../constants/services'
 import Btn from '../global/Buttons/Btn'
 import Card from './cards'
 
-const Services = () => {
-
-    
+const Services = ({ nameSection }) => {
 
     return (
         <>
             <WrapperSection title={`Services`} >
                 {services && <GridItems data={services} slices={3} 
-                    render={(service) => <Grid item md={4} xs={12} key={service?.id} >{<Card service={service}/>}</Grid>} />}
+                    render={(service) => <Grid item md={4} xs={12} key={service?.id} ><Card nameSection={nameSection} service={service}/></Grid>} />}
                 <Btn path={'services'} />
             </WrapperSection>
         </>

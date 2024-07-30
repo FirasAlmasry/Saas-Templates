@@ -1,34 +1,37 @@
 import React from 'react'
-import { Box, Grid, Typography } from '@mui/material'
+import { Box, Divider, Grid, Typography } from '@mui/material'
 import Logo from '../Logo'
 import Navigation from '../Navigation'
 import TouchWithUs from '../TouchWithUs'
-import theme from '../../../utils/theme'
+import { useTheme } from '@mui/material/styles';
 
 const Footer3 = () => {
+    const theme = useTheme();
+
     return (
         <>
             <Box component={'footer'} sx={{
                 position: 'relative',
-                background: theme.palette.background.footer,
+                background: theme.palette.footer.main,
                 padding: '16px 64px',
             }}>
                 <div className='overlay'></div>
-                    <Grid container>
-                        <Grid item md={4} xs={12} sx={{ display: 'flex', justifyContent: { md: 'center', xs: 'flex-start' } }} >
-                            <TouchWithUs />
-                        </Grid>
-                        <Grid item md={4} xs={12} sx={{ display: 'flex', justifyContent: { md: 'center', xs: 'flex-start' } }} >
-                            <Logo />
-                        </Grid>
-                        <Grid item md={4} xs={12} sx={{ display: 'flex', justifyContent: { md: 'center', xs: 'flex-start' } }} >
-                            <Navigation />
-                        </Grid>
+                <Grid container>
+                    <Grid item md={4} xs={12} sx={{ display: 'flex', justifyContent: { md: 'center', xs: 'flex-start' } }} >
+                        <TouchWithUs />
                     </Grid>
-                    <Typography color='primary.text' variant={'body2'} fontWeight={400}
-                        sx={{ position: 'relative', zIndex: 3, textAlign: 'center', mt: 2 }} >
-                        Copyright © 2024 Revamp TECHNICAL SERVICES. All rights reserved.
-                    </Typography>
+                    <Grid item md={4} xs={12} sx={{ display: 'flex', justifyContent: { md: 'center', xs: 'flex-start' } }} >
+                        <Logo />
+                    </Grid>
+                    <Grid item md={4} xs={12} sx={{ display: 'flex', justifyContent: { md: 'center', xs: 'flex-start' } }} >
+                        <Navigation />
+                    </Grid>
+                </Grid>
+                <Divider sx={{ border: `1px solid #fff`, my: 2 }} />
+                <Typography color='footer.link' variant={'body2'} fontWeight={200}
+                    sx={{ position: 'relative', zIndex: 3, textAlign: 'center', mt: 2 }} >
+                    Copyright © 2024 Revamp TECHNICAL SERVICES. All rights reserved.
+                </Typography>
             </Box>
         </>
     )

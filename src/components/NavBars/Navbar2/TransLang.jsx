@@ -4,11 +4,13 @@ import { useTranslation } from 'react-i18next';
 import { Button, CardMedia, Typography } from '@mui/material';
 import i18next from 'i18next';
 import arIcon from './../../../assets/translate/united-arab-emirates.png'
-import theme from '../../../utils/theme';
+import enIcon from './../../../assets/translate/united-kingdom.png'
+import { useTheme } from '@mui/material/styles';
 export default function BasicSelect() {
 
     const { i18n } = useTranslation();
     let lng = i18next.language;
+      const theme = useTheme();
 
     const toggleLanguage = () => {
         const otherLng = lng === 'en' ? 'ar' : 'en';
@@ -17,26 +19,15 @@ export default function BasicSelect() {
 
 
     return (
-        <div>
-            <Box>
-                <Button onClick={toggleLanguage} sx={{ border:'1px solid #386387', backgroundColor: theme.palette.secondary.main }} >
-                    {lng === 'ar' ? <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, flexDirection: 'row-reverse' }} >
-                        <CardMedia
-                            component={'img'}
-                            src={arIcon}
-                            sx={{ width: '20px' }}
-                        />
-                        <Typography>الأنجليزية</Typography>
-                    </Box> : <Box sx={{ display:'flex', alignItems:'center', gap:2, flexDirection:'row' }} >
-                        <CardMedia 
-                            component={'img'}
-                            src={arIcon}
-                            sx={{ width:'20px' }}
-                            />
-                        <Typography>العربية</Typography>
-                        </Box>}
-                    </Button>
+        <Button onClick={toggleLanguage} sx={{ border: `1px solid ${theme.palette.nav.link}`, backgroundColor: 'transparent' }} >
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, flexDirection: 'row-reverse' }} >
+                <CardMedia
+                    component={'img'}
+                    src={lng === 'en' ? arIcon : enIcon}
+                    sx={{ width: '20px' }}
+                />
+                <Typography color={'nav.link'} fontWeight={'bold'} >{lng === 'en' ? 'العربية' : 'English'}</Typography>
             </Box>
-        </div>
+        </Button>
     );
 }

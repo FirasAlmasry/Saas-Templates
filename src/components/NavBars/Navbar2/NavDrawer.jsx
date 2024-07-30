@@ -8,6 +8,7 @@ import { Pages } from "../../../constants";
 import i18next from "i18next";
 import logo from './../../../assets/Logo/logo.png'
 import CloseIcon from '@mui/icons-material/Close';
+import DarkModeToggle from "../../global/DarkModeToggle";
 
 export default function NavDrawer({ setDrawer, drawer }) {
     let lng = i18next.language
@@ -17,10 +18,10 @@ export default function NavDrawer({ setDrawer, drawer }) {
         fontSize: 14,
         textTransform: 'capitalize',
         fontWeight: 'bold',
-        color: theme.palette.secondary.main,
+        color: theme.palette.nav.link,
         transition: '0.5s',
         '&:hover': {
-            color: theme.palette.primary.main,
+            color: theme.palette.nav.hover,
             textDecoration: 'underline',
         },
     }));
@@ -32,21 +33,21 @@ export default function NavDrawer({ setDrawer, drawer }) {
                     anchor={lng === 'en' ? 'left' : 'right'}
                     open={drawer}
                     onClose={() => setDrawer(false)}
-                    sx={{ 
+                    sx={{
                         '.MuiDrawer-paper': {
                             height: '80% !important ',
                             borderBottomRightRadius: '16px',
                             overflowY: 'auto'
                         }
                     }}
-                    >
+                >
                     <Box
                         sx={{
                             width: 300,
                             gap: 3,
                             display: "flex",
                             flexDirection: "column",
-                            textAlign:  lng === 'en' ? 'left' : 'right',
+                            textAlign: lng === 'en' ? 'left' : 'right',
                             padding: "40px 20px",
                         }}>
                         <Box
@@ -58,11 +59,10 @@ export default function NavDrawer({ setDrawer, drawer }) {
                                 alignItems: "center",
                             }}>
                             <RouterLink to="/">
-                                <img src={logo} style={{ height:'fit-contain' }} alt="logo" className="nav-logo" ></img>
+                                <img src={logo} style={{ height: 'fit-contain' }} alt="logo" className="nav-logo" ></img>
                             </RouterLink>
                             <IconButton onClick={() => setDrawer(false)}>
                                 <CloseIcon />
-                                {/* <img src={close} style={{ height:'20px' }} alt="close" ></img> */}
                             </IconButton>
                         </Box>
                         {
@@ -84,6 +84,7 @@ export default function NavDrawer({ setDrawer, drawer }) {
                             ))
                         }
                         <TransLang />
+                        <DarkModeToggle />
                     </Box>
                 </Drawer>
             </React.Fragment>

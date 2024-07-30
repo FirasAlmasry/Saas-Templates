@@ -7,13 +7,13 @@ import Btn from '../global/Buttons/Btn'
 import Card from './cards'
 
 
-const Projects = () => {
+const Projects = ({ nameSection }) => {
 
     return (
         <>
             <WrapperSection title={`Our Projects`} >
                 {projects && <GridItems data={projects} slices={3} 
-                    render={(project) => <Grid md={4} xs={12} key={project?.id} ><Card project={project}/></Grid>} />}
+                    render={(project) => <Grid item md={4} xs={12} key={project?.id} ><Card nameSection={nameSection} project={project}/></Grid>} />}
                 <Btn path={'projects'} />
             </WrapperSection>
         </>

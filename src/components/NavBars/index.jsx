@@ -9,7 +9,7 @@ const NavBar4 = lazy(() => import('./Navbar4'));
 const NavBar = () => {
 
     const renderNavbar = () => {
-        const data = { navbarSection: 'navbar4', }
+        const data = { navbarSection: 'navbar2', }
         switch (data.navbarSection) {
             case 'navbar1': return <NavBar1 />;
             case 'navbar2': return <NavBar2 />;

@@ -8,6 +8,7 @@ import i18next from "i18next";
 import { IconButton } from "@mui/material";
 import logo from './../../../assets/Logo/logo.png'
 import CloseIcon from '@mui/icons-material/Close';
+import DarkModeToggle from "../../global/DarkModeToggle";
 
 export default function NavDrawer({ setDrawer, drawer }) {
 
@@ -16,10 +17,10 @@ export default function NavDrawer({ setDrawer, drawer }) {
         fontSize: 18,
         textTransform: 'capitalize',
         fontWeight: 'bold',
-        color: theme.palette.secondary.main,
+        color: theme.palette.nav.link,
         transition: '0.5s',
         '&:hover': {
-            color: theme.palette.primary.main,
+            color: theme.palette.nav.hover,
             textDecoration: 'underline',
         },
     }));
@@ -74,6 +75,7 @@ export default function NavDrawer({ setDrawer, drawer }) {
                             ))
                         }
                         <TransLang />
+                        <DarkModeToggle />
                     </Box>
                 </Drawer>
             </React.Fragment>

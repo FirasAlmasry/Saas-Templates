@@ -1,9 +1,12 @@
 import { Box, CardMedia, Typography, useMediaQuery } from '@mui/material'
 import React from 'react'
-import { useTheme } from '@emotion/react';
-import theme from '../../../utils/theme';
+import { useTheme as themeMobile } from '@emotion/react';
+import { useTheme } from '@mui/material/styles';
+
 const Section = ({ title, img, description }) => {
-    const themeM = useTheme();
+    const theme = useTheme();
+
+    const themeM = themeMobile();
     const isMobile = useMediaQuery(themeM.breakpoints.down('sm'));
     return (
         <>

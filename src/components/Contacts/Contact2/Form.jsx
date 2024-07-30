@@ -4,9 +4,11 @@ import emailjs from '@emailjs/browser';
 import './form.css'
 import FormInput from './FormInput';
 import Btn from './../../global/Buttons/Btn';
-import theme from '../../../utils/theme';
+import { useTheme } from '@mui/material/styles';
 
 const Form = () => {
+        const theme = useTheme();
+
     const form = useRef()
     const sendEmail = (e) => {
         e.preventDefault();
@@ -20,8 +22,8 @@ const Form = () => {
         e.target.reset()
     }
     return (
-        <Box sx={{ background: theme.palette.background.form, p: 4, borderRadius: 2 }} >
-            <Typography sx={{ my: 1, textTransform: 'capitalize' }} color={'primary.main'} fontWeight={400} variant='h5' >Send A Message</Typography>
+        <Box sx={{background:theme.palette.background.form, p:4,  borderRadius:2}} >
+            <Typography sx={{ my: 1, textTransform:'capitalize' }} color={'primary.main'} fontWeight={400} variant='h5' >Send A Message</Typography>
             <Box component={'form'} ref={form} onSubmit={sendEmail} >
                 <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }} >
                     <Box sx={{ width: { md: '45%', xs: '100%' }, my: 2 }}>

@@ -39,7 +39,7 @@ const BlogDetails = (blogs ={}) => {
                                 {name}
                             </Typography>
                             <Box sx={{ display: 'flex', gap: 2 }} >
-                                <Typography gutterBottom color={'secondary.main'} component="div" sx={{ textTransform: 'uppercase' }} >
+                                <Typography gutterBottom color={'secondary.text'} component="div" sx={{ textTransform: 'uppercase' }} >
                                     {createdBy},
                                 </Typography>
                                 <Typography color={'secondary.text'}  >

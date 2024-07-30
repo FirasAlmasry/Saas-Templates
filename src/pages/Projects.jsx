@@ -8,12 +8,14 @@ import Card from '../components/Projects/cards'
 
 const Projects = () => {
 
+  const Projects = { projectSection: 'Card1', }
+
   return (
     <>
       <Header />
       <WrapperSection title={`Our Projects`} >
         {projects && <GridItems data={projects}
-          render={(project) => <Grid item md={4} xs={12} key={project?.id} ><Card project={project} /> </Grid>} />}
+          render={(project) => <Grid item md={4} xs={12} key={project?.id} ><Card nameSection={Projects} project={project} /> </Grid>} />}
       </WrapperSection>
     </>
   )

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Grid, Typography } from '@mui/material'
+import { Box, Divider, Grid, Typography } from '@mui/material'
 import Logo from '../Logo'
 import Navigation from '../Navigation'
 import TouchWithUs from '../TouchWithUs'
@@ -25,7 +25,8 @@ const Footer1 = () => {
                         <Logo />
                     </Grid>
                 </Grid>
-                <Typography color='primary.text' variant={'body2'} fontWeight={400}
+                <Divider sx={{ border: `1px solid #fff`, my: 2 }} />
+                <Typography color='footer.link' variant={'body2'} fontWeight={200}
                     sx={{ position: 'relative', zIndex: 3, textAlign: 'center', mt: 2 }} >
                     Copyright © 2024 Revamp TECHNICAL SERVICES. All rights reserved.
                 </Typography>

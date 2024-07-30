@@ -2,10 +2,10 @@ import './App.css';
 import React, { useEffect, useMemo } from 'react';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { ThemeProvider } from '@mui/material/styles';
+// import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { HelmetProvider } from 'react-helmet-async';
-import theme from './utils/theme';
+// import theme from './utils/theme';
 import RoutesPath from './routes';
 import { DarkModeProvider } from "./context/DarkModeContext";
 import { useTranslation } from 'react-i18next';
@@ -49,14 +49,12 @@ function App() {
     <DarkModeProvider>
       <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools initialIsOpen={false} buttonPosition='bottom-left' />
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <HelmetProvider>
-            <BrowserRouter>
-              <RoutesPath />
-            </BrowserRouter>
-          </HelmetProvider>
-        </ThemeProvider>
+        <CssBaseline />
+        <HelmetProvider>
+          <BrowserRouter>
+            <RoutesPath />
+          </BrowserRouter>
+        </HelmetProvider>
       </QueryClientProvider>
     </DarkModeProvider>
   );

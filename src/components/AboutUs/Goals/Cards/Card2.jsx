@@ -1,13 +1,14 @@
 import { Box, CardMedia, Typography, useMediaQuery } from '@mui/material'
 import React from 'react'
-import theme from '../../../../utils/theme'
-import { useTheme } from '@emotion/react';
+import { useTheme } from '@mui/material/styles';
+import { useTheme as themeMobile } from '@emotion/react';
 
 const Card2 = ({ goals }) => {
+        const theme = useTheme();
 
   const { img, title, description } = goals
 
-  const themeM = useTheme();
+  const themeM = themeMobile();
   const isMobile = useMediaQuery(themeM.breakpoints.down('sm'));
   return (
     <Box sx={{ m: 1, height: '100%'}} >

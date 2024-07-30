@@ -7,12 +7,12 @@ import { services } from '../constants/services'
 import Card from '../components/Services/cards'
 
 const OurServices = () => {
-
+  const Services = { serviceSection: 'Card1', }
   return (
     <>
       <Header />
       <WrapperSection title={`Services`} >
-        {services && <GridItems data={services} render={(service) => <Grid item md={4} xs={12} key={service?.id} ><Card service={service}/> </Grid>} />}
+        {services && <GridItems data={services} render={(service) => <Grid item md={4} xs={12} key={service?.id} ><Card nameSection={Services} service={service}/> </Grid>} />}
       </WrapperSection>
     </>
   )

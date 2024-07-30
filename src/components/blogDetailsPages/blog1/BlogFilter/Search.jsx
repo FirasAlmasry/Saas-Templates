@@ -2,10 +2,12 @@ import React from 'react'
 
 import { IconButton, InputAdornment, TextField } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import theme from '../../../../utils/theme';
+import { useTheme } from '@mui/material/styles';
 
 // render
 const Search = () => {
+    const theme = useTheme();
+
     return (
         <>
             <TextField
@@ -20,15 +22,15 @@ const Search = () => {
                 InputProps={{
                     endAdornment: (
                         <InputAdornment>
-                            <IconButton sx={{ 
-                                backgroundColor: theme.palette.secondary.main, 
-                                color: '#FFF',
+                            <IconButton sx={{
+                                backgroundColor: theme.palette.secondary.main,
+                                color: theme.palette.primary.main,
                                 borderRadius: 2,
                                 ':hover': {
                                     backgroundColor: theme.palette.secondary.main,
-                                    color: '#FFF',
+                                    color: theme.palette.primary.main,
                                 }
-                                }} >
+                            }} >
                                 <SearchIcon />
                             </IconButton>
                         </InputAdornment>

@@ -6,11 +6,13 @@ import i18next from "i18next";
 import NavDrawer from "./NavDrawer";
 import TransLang from "./TransLang"
 import logo from './../../../assets/Logo/logo.png'
-import theme from './../../../utils/theme';
+import { useTheme } from '@mui/material/styles';
 import { Pages } from "../../../constants";
-import './Nav.css'
+import DarkModeToggle from "../../global/DarkModeToggle";
 
 function NavBar() {
+      const theme = useTheme();
+
     let lng = i18next.language
     const [drawer, setDrawer] = useState(false);
 
@@ -18,11 +20,10 @@ function NavBar() {
         textDecoration: "none",
         fontSize: 18,
         textTransform: 'capitalize',
-        fontWeight: 'bold',
-        color: theme.palette.secondary.main,
+        color: theme.palette.nav.link,
         transition: '0.5s',
         '&:hover': {
-            color: theme.palette.primary.main,
+            color: theme.palette.nav.hover,
             textDecoration: 'underline',
         },
     }));
@@ -30,7 +31,7 @@ function NavBar() {
     return (
         <>
             <AppBar position="static" elevation={0} sx={{
-                backgroundColor: theme.palette.background.navbar, 
+                backgroundColor: theme.palette.nav.main,
                 boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
                 position: 'sticky',
                 top: 0,
@@ -58,12 +59,12 @@ function NavBar() {
                             <StyledLink
                                 key={i}
                                 to={page.path}
-                            // onClick={() => scrollToTop()}
                             >
                                 {lng === 'ar' ? page.name : page.name_en}
                             </StyledLink>
                         ))}
                         <TransLang />
+                        <DarkModeToggle />
                     </Box>
                     <Box sx={{ justifyContent: 'space-between', display: 'flex', gap: { md: '65px', xs: 1 }, width: { md: 'fit-content', xs: '100%' }, alignItems: 'center' }} >
                         <Box

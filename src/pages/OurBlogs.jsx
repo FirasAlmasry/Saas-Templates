@@ -8,6 +8,8 @@ import Card from '../components/blogs/cards'
 
 const OurBlogs = () => {
 
+  const Blogs = { blogSection: 'Card1', }
+
   return (
     <>
       <Header />
@@ -15,7 +17,7 @@ const OurBlogs = () => {
         {blogs &&
           <GridItems data={blogs} render={(blog) => (
             <Grid item md={6} xs={12} key={blog.id}>
-              <Card blog={blog}/>
+              <Card nameSection={Blogs} blog={blog} />
             </Grid>
           )} />
         }

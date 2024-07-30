@@ -8,24 +8,26 @@ import MenuIcon from "@mui/icons-material/Menu";
 import NavDrawer from "./NavDrawer";
 import { BasicSelect as TransLang } from "./TransLang"
 import i18next from "i18next";
-import theme from "../../../utils/theme";
+import { useTheme } from '@mui/material/styles';
 import { Pages } from "../../../constants";
 import logo from './../../../assets/Logo/logo.png'
 import './Nav.css'
 import { styled } from '@mui/material/styles';
+import DarkModeToggle from "../../global/DarkModeToggle";
 
 
 
 
 function NavBar() {
+      const theme = useTheme();
 
     const StyledLink = styled(RouterLink)(({ theme }) => ({
         textTransform: 'capitalize',
-        color: theme.palette.secondary.main,
+        color: theme.palette.nav.link,
         textDecoration: 'none',
         transition:'0.5s',
         '&:hover': {
-            color: theme.palette.primary.main,
+            color: theme.palette.nav.hover,
             textDecoration: 'underline',
         },
     }));
@@ -43,7 +45,7 @@ function NavBar() {
     return (
         <>
             <Box sx={{ backgroundColor: theme.palette.background.section, py:2 }} >
-                <AppBar position="static" elevation={0} className="appNav" sx={{backgroundColor:theme.palette.background.navbar}} >
+                <AppBar position="static" elevation={0} className="appNav" sx={{backgroundColor:theme.palette.nav.main}} >
                     <Toolbar disableGutters>
                         <Box
                             sx={{
@@ -71,6 +73,7 @@ function NavBar() {
                                 </StyledLink>
                             ))}
                             <TransLang />
+                            <DarkModeToggle />
                         </Box>
                         <Box sx={{ justifyContent: 'space-between', display: 'flex', gap: { md: '65px', xs: 1 }, width: { md: 'fit-content', xs: '100%' }, alignItems: 'center' }} >
                             <Box

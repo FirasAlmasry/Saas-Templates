@@ -3,10 +3,11 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import ContactSocial from './ContactSocial';
 import { Box } from '@mui/material';
 import styled from 'styled-components';
-import theme from '../../utils/theme';
+import { useTheme } from '@mui/material/styles';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 const Social = () => {
+    const theme = useTheme();
 
     const StyledBox = styled.div`
   display: flex;
@@ -24,10 +25,11 @@ const Social = () => {
 
   svg {
     transition: transform 0.3s ease;
+     color: ${theme.palette.footer.link};
   }
 
   &:hover svg {
-    transform: rotate(-20deg);
+    transform: rotate(-20deg) scale(1.2);
   }
 `;
     return (

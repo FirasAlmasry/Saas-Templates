@@ -7,16 +7,14 @@ import Btn from '../global/Buttons/Btn';
 import Card from './cards';
 
 
-const Blogs = () => {
-
-   
+const Blogs = ({ nameSection }) => {
 
     return (
         <WrapperSection title={`Our Blogs`}>
             {blogs &&
                 <GridItems data={blogs} slices={4} render={(blog) => (
                     <Grid item md={6} xs={12} key={blog.id}>
-                    <Card blog={blog}/>
+                        <Card nameSection={nameSection} blog={blog} />
                     </Grid>
                 )} />
             }

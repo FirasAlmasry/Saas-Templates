@@ -1,43 +1,32 @@
-import { createContext, useContext, useEffect } from "react";
-import { useLocalStorageState } from "../hooks/useLocalStorageState";
+// DarkModeContext.js
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
+import theme from './../utils/theme';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const DarkModeContext = createContext();
 
-function DarkModeProvider({ children }) {
-  const [isDarkMode, setIsDarkMode] = useLocalStorageState(
-    window.matchMedia("(prefers-color-scheme: dark)").matches,
-    "isDarkMode"
-  );
+export const useDarkMode = () => useContext(DarkModeContext);
 
-  useEffect(
-    function () {
-      if (isDarkMode) {
-        document.documentElement.classList.add("dark-mode");
-        document.documentElement.classList.remove("light-mode");
-      } else { 
-        document.documentElement.classList.add("light-mode");
-        document.documentElement.classList.remove("dark-mode");
-      }
-    },
-    [isDarkMode]
-  );
+export const DarkModeProvider = ({ children }) => {
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+  const [isDarkMode, setIsDarkMode] = useState(prefersDarkMode);
 
-  function toggleDarkMode() {
-    setIsDarkMode((isDark) => !isDark);
-  }
+  useEffect(() => {
+    setIsDarkMode(prefersDarkMode);
+  }, [prefersDarkMode]);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
+  const currentTheme = theme(isDarkMode ? 'dark' : 'light');
 
   return (
     <DarkModeContext.Provider value={{ isDarkMode, toggleDarkMode }}>
-      {children}
+      <MuiThemeProvider theme={currentTheme}>
+        {children}
+      </MuiThemeProvider>
     </DarkModeContext.Provider>
   );
-}
-
-function useDarkMode() {
-  const context = useContext(DarkModeContext);
-  if (context === undefined)
-    throw new Error("DarkModeContext was used outside of DarkModeProvider");
-  return context;
-}
-
-export { DarkModeProvider, useDarkMode };
+};
