@@ -6,10 +6,13 @@ const Card2 = ({ services }) => {
     const { id, title, description, img } = services || {};
     const navigate = useNavigate()
     return (
-        <Card sx={{ maxWidth: 345, my: 1, boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.20)",cursor:'pointer' }} onClick={()=> navigate(`/service/${id}`)} >
+        <Card sx={{ maxWidth: 345, my: 1, boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.20)", cursor: 'pointer' }}
+            className='card grayscale reset'
+            onClick={() => navigate(`/service/${id}`)} >
             <CardMedia
                 sx={{ height: 140 }}
                 image={img}
+                className='blur reset'
                 title="green iguana"
             />
             <CardContent>

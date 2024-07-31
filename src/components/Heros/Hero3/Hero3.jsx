@@ -5,11 +5,9 @@ import Sliders from './Sliders'
 const Hero3 = () => {
   return (
     <>
-        <Box position={'relative'} >
-            <Box>
-                <Sliders />
-            </Box>
-        </Box>
+      <Box position={'relative'} sx={{ mt: '-70px' }}>
+        <Sliders />
+      </Box>
     </>
   )
 }

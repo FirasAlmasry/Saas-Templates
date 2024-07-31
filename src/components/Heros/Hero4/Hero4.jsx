@@ -6,7 +6,7 @@ const Hero4 = () => {
 
   return (
     <>
-      <Box position={'relative'} >
+      <Box position={'relative'} sx={{mt:'-70px'}} >
         <Sliders />
       </Box>
     </>

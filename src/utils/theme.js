@@ -48,7 +48,7 @@ const lightPalette = {
     background: {
         default: "#fff",
         section: "#f7f7f7",
-        card: '#f7f7f7',
+        card: '#ddd',
         input: "#f7f7f7",
         form: "#fff",
     },
@@ -70,7 +70,7 @@ const darkPalette = {
         hover: '#A69F9F'
     },
     footer: {
-        main: "#102251",
+        main: "#121212",
         link: '#fff',
         hover: '#A69F9F'
     },

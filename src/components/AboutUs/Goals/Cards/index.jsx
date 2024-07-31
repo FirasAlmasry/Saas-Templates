@@ -4,7 +4,7 @@ import importComponent from '../../../../utils/importComponent';
 
 const Card = ({ goal, nameSection }) => {
 
-    const Component = importComponent(`/AboutUs/Goals/cards/${nameSection?.goalSection}`);
+    const Component = importComponent(`/AboutUs/Goals/cards/${nameSection.goalSection}`);
 
     return (
         <Suspense fallback={<LoadingPage />}>

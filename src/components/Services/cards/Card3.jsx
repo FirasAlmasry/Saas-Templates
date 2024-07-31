@@ -9,7 +9,9 @@ const Card3 = ({ services }) => {
     const navigate = useNavigate()
 
     return (
-        <Box sx={{ m: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', cursor:'pointer' }}
+        <Box sx={{ m: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+            className='card grayscale reset'
+
             onClick={() => navigate(`/service/${id}`)}>
             <Box sx={{
                 p: 2, borderRadius: '50%',
@@ -18,15 +20,17 @@ const Card3 = ({ services }) => {
                 position: 'relative'
             }} >
                 <CardMedia
-                component={'img'}
+                    component={'img'}
                     sx={{ height: 240, width: '240px', borderRadius: '50%' }}
                     src={img}
+                    className='blur reset'
+
                     title="green iguana"
                 />
             </Box>
-                <Typography gutterBottom variant="h6" component="div" color={'secondary.main'} sx={{ textTransform: 'uppercase', my:2 }} >
-                    {title}
-                </Typography>
+            <Typography gutterBottom variant="h6" component="div" color={'secondary.main'} sx={{ textTransform: 'uppercase', my: 2 }} >
+                {title}
+            </Typography>
         </Box>
     )
 }

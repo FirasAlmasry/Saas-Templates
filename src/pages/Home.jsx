@@ -10,7 +10,7 @@ import Intro from '../components/AboutUs/Introductions';
 const Services = lazy(() => import('../components/Services/Services'));
 
 const Home = () => {
-  const home = { heroSection: 'Hero2', serviceSection: 'Card2', introSection: 'Introduction3', goalSection: 'Card3', projectSection: 'Card2', blogSection:'Card3' }
+  const home = { heroSection: 'Hero1', serviceSection: 'Card1', introSection: 'Introduction1', goalSection: 'Card2', projectSection: 'Card2', blogSection:'Card3' }
   return (
     <>
       <Hero data={home} />

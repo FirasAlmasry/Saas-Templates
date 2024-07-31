@@ -57,7 +57,7 @@ function NavBar() {
                 style={{
                     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
                     padding: "10px",
-                    position:'fixed',
+                    position:'sticky',
                     top:0,
                     zIndex: 999, 
                     backgroundColor:'transparent'

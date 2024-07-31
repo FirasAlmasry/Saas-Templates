@@ -76,6 +76,7 @@ to create an amazing website that looks`} btn={`Read More`} />
                             },
                             width: { md: '45%', xs: '100%' },
                             objectFit: "fill",
+                            borderRadius:'16px'
                         }}
                         component="img"
                         alt={`slide-${i}`}

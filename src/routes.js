@@ -4,6 +4,7 @@ import LoadingPage from './components/global/LoadingPage';
 
 import NavBar from './components/NavBars';
 import Footer from './components/Footer/footers/Footer';
+import ScrollToTopButton from './components/global/ScrollToTopButton';
 
 // Pages
 const Home = lazy(() => import("./pages/Home"));
@@ -30,6 +31,7 @@ const RoutesPath = () => {
         <>
             <NavBar />
             <ScrollToTop />
+            <ScrollToTopButton />
             <Suspense fallback={<LoadingPage />}>
                 <Routes>
                     <Route path="/" element={<Home />} />

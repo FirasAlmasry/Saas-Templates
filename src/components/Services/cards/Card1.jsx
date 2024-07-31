@@ -12,7 +12,10 @@ const Card1 = ({ services }) => {
     const navigate = useNavigate()
     let lng  = i18next.language
     return (
-        <MuiCard sx={{ maxWidth: 345, my: 2, mx: 'auto', position: 'relative', cursor: 'pointer' }} onClick={() => navigate(`/service/${id}`)} >
+        <MuiCard 
+        sx={{ maxWidth: 345, my: 2, mx: 'auto', position: 'relative', cursor: 'pointer' }}
+        className='card grayscale reset'
+        onClick={() => navigate(`/service/${id}`)} >
             <CardContent sx={{
                 backgroundColor: theme.palette.background.card, "::before": {
                     content: '""',
@@ -40,6 +43,7 @@ const Card1 = ({ services }) => {
             <CardMedia
                 sx={{ height: 240 }}
                 image={img}
+                className='blur reset'
                 title="green iguana"
             />
         </MuiCard>

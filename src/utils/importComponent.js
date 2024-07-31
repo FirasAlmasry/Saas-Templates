@@ -8,7 +8,7 @@ const FallbackComponent = () => (
 
 const importComponent = (componentPath) => {
     try {
-        return lazy(() => import(`../components${componentPath}`));
+        return lazy(() => import(`./../components${componentPath}`));
     } catch (error) {
         console.error(`Component ${componentPath} not found.`, error);
         return FallbackComponent;

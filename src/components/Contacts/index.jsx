@@ -4,7 +4,7 @@ import importComponent from '../../utils/importComponent'
 
 const Contact = () => {
 
-    const contact = { contactSection: 'Contact3', }
+    const contact = { contactSection: 'Contact1', }
 
     const Component = importComponent(`/Contacts/${contact.contactSection}/${contact.contactSection}`);
 

@@ -7,7 +7,9 @@ const Card3 = ({ goals }) => {
 
     const { img, title, description } = goals
     return (
-        <Box sx={{ m: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', }}>
+        <Box
+         className='card rotate' 
+        sx={{ m: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', }}>
             <Box sx={{
                 borderRadius: '50%',
                 background: theme.palette.background.card,
@@ -18,6 +20,7 @@ const Card3 = ({ goals }) => {
                     component={'img'}
                     sx={{ objectFit:'scale-down' }}
                     src={img}
+                       className='rotate' 
                     title="green iguana"
                 />
             </Box>

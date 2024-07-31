@@ -46,6 +46,7 @@ const Sliders = () => {
                 {images?.map((res, i) => 
                     <Box key={i} sx={{ zIndex: 999 }}>
                         <HeroText title={`title template four Here`} desc={`description template four Here`} btn={`see more`} />
+                        <div className="overlay"></div>
                         <CardMedia
                             sx={{
                                 height: {
