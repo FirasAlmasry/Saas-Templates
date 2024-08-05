@@ -13,7 +13,8 @@ const Slider = ({ nav= false ,children }) => {
                 sx={{
                     marginTop: "25px",
                     width: { md: "100%", xs: "100%" },
-                    margin: "auto"
+                    margin: "auto",
+                    height:'20rem'
                 }}>
                 {children}
             </Carousel>

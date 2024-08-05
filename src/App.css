@@ -39,7 +39,7 @@ body:lang(en),
   transform: rotate(360deg) scale(1.3);
 }
 .blur {
-  filter: blur(2px);
+  filter: blur(1px);
 }
 /* .grayscale {
   filter: grayscale(1);
