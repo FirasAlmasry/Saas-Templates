@@ -1,6 +1,13 @@
-import { formatDistance, parseISO, differenceInDays } from 'date-fns';
+import { formatDistance, parseISO, differenceInDays, format } from 'date-fns';
 
+// دالة جديدة لتنسيق التاريخ
+export const formatDate = (dateStr) => {
+  // تحويل النص إلى كائن Date
+  const date = parseISO(dateStr);
 
+  // تنسيق التاريخ إلى "MMMM d, yyyy" (مثلاً: "August 3, 2024")
+  return format(date, 'MMMM d, yyyy');
+};
 // We want to make this function work for both Date objects and strings (which come from Supabase)
 export const subtractDates = (dateStr1, dateStr2) =>
   differenceInDays(parseISO(String(dateStr1)), parseISO(String(dateStr2)));
@@ -28,3 +35,28 @@ export const formatCurrency = (value) =>
   new Intl.NumberFormat('en', { style: 'currency', currency: 'USD' }).format(
     value
   );
+
+export const extractVideoLink = (videoLink) => {
+  let embedLink;
+
+  // التحقق مما إذا كان الرابط من YouTube (تنسيق عادي أو مختصر)
+  if (videoLink?.includes('youtube.com/watch')) {
+    // استخراج الـ video ID من الرابط العادي
+    const urlParams = new URLSearchParams(new URL(videoLink).search);
+    const videoId = urlParams.get('v');
+
+    // إنشاء رابط التضمين
+    embedLink = `https://www.youtube.com/embed/${videoId}`;
+  } else if (videoLink?.includes('youtu.be/')) {
+    // استخراج الـ video ID من الرابط المختصر
+    const videoId = new URL(videoLink).pathname.split('/')[1];
+
+    // إنشاء رابط التضمين
+    embedLink = `https://www.youtube.com/embed/${videoId}`;
+  } else {
+    // إذا لم يكن الرابط من YouTube، استخدم الرابط كما هو
+    embedLink = videoLink;
+  }
+
+  return embedLink;
+};

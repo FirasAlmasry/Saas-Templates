@@ -28,17 +28,17 @@ const baseTheme = {
 const lightPalette = {
     mode: 'light',
     primary: {
-        main: "#FCCC24",
+        main: "#4c164c",
         text: "#fff",
     },
     secondary: {
-        main: "#000",
+        main: "#ffdf6f",
         text: "#A69F9F",
     },
     nav: {
-        main: "#fff",
-        link: '#000',
-        hover: '#A69F9F'
+        main: "#4c164c",
+        link: '#fff',
+        hover: '#ffdf6f'
     },
     footer: {
         main: "#102251",
@@ -47,8 +47,8 @@ const lightPalette = {
     },
     background: {
         default: "#fff",
-        section: "#f7f7f7",
-        card: '#ddd',
+        section: "#fff",
+        card: '#fff',
         input: "#f7f7f7",
         form: "#fff",
     },

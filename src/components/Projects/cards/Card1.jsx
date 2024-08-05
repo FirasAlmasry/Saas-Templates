@@ -7,7 +7,7 @@ import i18next from 'i18next';
 const Card1 = ({ projects }) => {    
     const theme = useTheme();
 
-    const { id, description, img } = projects || {};
+    const { slug: projectSlug, description, images } = projects || {};
     const navigate = useNavigate()
     let lng = i18next.language
     return (
@@ -24,16 +24,16 @@ const Card1 = ({ projects }) => {
                         borderStyle: 'solid',
                         borderColor: 'transparent transparent white transparent',
                     } }}
-                image={img}
+                image={images[0]?.image}
                 title="green iguana"
             />
             <CardContent sx={{
-                backgroundColor: theme.palette.background.default }} >
+                backgroundColor: theme.palette.background.default, height:'150px' }} >
                 <Typography variant="body2" color={'secondary.text'}>
-                    {description}
+                    {description.slice(0,200)}
                 </Typography>
-                <Typography gutterBottom variant="body2" component="p" color={'primary.main'} sx={{ cursor: 'pointer', mt: 1 }} onClick={() => navigate(`/project/${id}`)}>
-                    +Read More
+                <Typography gutterBottom variant="body2" component="p" color={'primary.main'} sx={{ cursor: 'pointer', mt: 1 }} onClick={() => navigate(`/project/${projectSlug}`)}>
+                    {lng === 'en'? ' +Read More' : 'المزيد'}
                 </Typography>
             </CardContent>
             

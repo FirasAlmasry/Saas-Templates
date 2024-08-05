@@ -5,14 +5,14 @@ import { Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
 const Card3 = ({ services }) => {
-    const { id, title, img } = services || {};
+    const { slug: serviceSlug, title,  image } = services || {};
     const navigate = useNavigate()
 
     return (
         <Box sx={{ m: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
             className='card grayscale reset'
 
-            onClick={() => navigate(`/service/${id}`)}>
+            onClick={() => navigate(`/service/${serviceSlug}`)}>
             <Box sx={{
                 p: 2, borderRadius: '50%',
                 background: 'linear-gradient(180deg, rgba(250,109,148,1) 0%, rgba(129,75,142,1) 50%, rgba(8,41,136,1) 75%, rgba(183,177,205,1) 100%)',
@@ -22,7 +22,7 @@ const Card3 = ({ services }) => {
                 <CardMedia
                     component={'img'}
                     sx={{ height: 240, width: '240px', borderRadius: '50%' }}
-                    src={img}
+                    src={image}
                     className='blur reset'
 
                     title="green iguana"

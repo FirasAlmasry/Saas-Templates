@@ -1,7 +1,7 @@
 .appNav {
   position: relative !important;
   padding: 0px 25px !important;
-  top: 0 !important;
+  top: -12px !important;
   z-index: 999 !important;
   width: 60% !important;
   margin: auto !important;

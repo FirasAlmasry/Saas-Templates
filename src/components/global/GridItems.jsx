@@ -13,7 +13,7 @@ const GridItems = ({ data, slices, render }) => {
     if (!data.length) return <Empty>No data to show at the moment</Empty>;
     return (
         <>
-            <Grid container>
+            <Grid container justifyContent={'space-evenly'}>
                 {slices ? data?.slice(0, slices)?.map(render) : data?.map(render)}
             </Grid>
         </>

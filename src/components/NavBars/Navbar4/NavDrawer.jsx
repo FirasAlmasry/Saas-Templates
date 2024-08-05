@@ -16,7 +16,6 @@ export default function NavDrawer({ setDrawer, drawer }) {
         textDecoration: "none",
         fontSize: 18,
         textTransform: 'capitalize',
-        fontWeight: 'bold',
         color: theme.palette.nav.link,
         transition: '0.5s',
         '&:hover': {

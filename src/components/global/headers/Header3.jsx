@@ -5,13 +5,13 @@ import { useTheme } from '@mui/material/styles';
 import { useLocation } from 'react-router-dom';
 
 
-const Header3 = () => {
+const Header3 = ({ page_name, cover }) => {
     const theme = useTheme();
 
     const location = useLocation()
     let page = location.pathname.split('/')[1]
     return (
-        <Box position={'relative'} sx={{ mt: '-70px', backgroundImage: `url(${header})`, height: '20rem', backgroundSize: 'cover', position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
+        <Box position={'relative'} sx={{ mt: '-70px', backgroundImage: `url(${cover || header})`, height: '20rem', backgroundSize: 'cover', position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
             <div className="overlay"></div>
             <Box sx={{ position: 'relative', zIndex: 9 }} >
                 <div style={{
@@ -29,10 +29,10 @@ const Header3 = () => {
                     borderTop: `2px solid ${theme.palette.primary.main}`,
                     // margin: '10px 0'
                 }} />
-                <Box sx={{ display: 'flex', color: '#FFF', justifyContent: 'center', gap: 1 }} >
+                <Box sx={{ display: 'flex', color: theme.palette.primary.text, justifyContent: 'center', gap: 1 }} >
                     <Typography>Home</Typography>
                     /
-                    <Typography>{page.toUpperCase()}</Typography>
+                    <Typography>{page_name || page}</Typography>
                 </Box>
             </Box>
         </Box>

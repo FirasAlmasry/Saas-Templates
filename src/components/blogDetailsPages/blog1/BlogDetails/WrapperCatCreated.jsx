@@ -13,6 +13,7 @@ const WrapperCatCreated = ({icon, text}) => {
               <CardMedia
                   component={'img'}
                   src={icon}
+                  sx={{width:'20px'}}
               />
             }
               <Typography color={'secondary.supMain'} >{text}</Typography>

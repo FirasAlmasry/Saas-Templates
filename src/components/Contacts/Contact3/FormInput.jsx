@@ -25,7 +25,7 @@ const FormInput = ({ label, type }) => {
                 rows={6}
                 variant={type}
                 size="medium"
-                name={type}
+                name={'notes'}
                 className='input'
             />}
         </>

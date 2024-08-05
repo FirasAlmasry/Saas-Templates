@@ -2,36 +2,43 @@ import React from 'react'
 import WrapperSection from '../global/WrapperSection'
 import { Grid } from '@mui/material';
 import GridItems from '../global/GridItems'
-import serviceImage from './../../assets/services/service1.png'
 import Description from '../global/Description';
-import { services } from '../../constants/services'
 import Card from './cards';
 import Image from '../global/images';
+import { useNameSection } from '../../hooks/useNameSection';
+import LoadingPage from '../global/LoadingPage';
 
 
-const DetailsPage = () => {
+const DetailsPage = ({data}) => {
+    
+    const { isLoading: isLoadingNameSection, nameSection } = useNameSection('sengle-service');
 
-    const Service = { descriptionSection: 'Image1' ,serviceSection: 'Card2', }
+    const { sections } = nameSection?.data || {};
+
+    const Service = {
+        descriptionSection: sections?.find(section => section.name.includes('Details'))?.component?.[0]?.name,
+        serviceSection: sections?.find(section => section.name.includes('Other - Services'))?.component?.[0]?.name,
+    };
+
+    if (isLoadingNameSection) return <LoadingPage />
 
     return (
         <>
-            <WrapperSection title={'Service'} >
-                <Grid container spacing={2}>
+            <WrapperSection title={data?.service_title} >
+                <Grid container spacing={2} alignItems={'center'}>
                     <Grid item md={4} xs={12}>
-                        <Image nameSection={Service} image={serviceImage}/>
+                        <Image nameSection={Service} image={data?.data?.image}/>
                     </Grid>
                     <Grid item md={8} xs={12}>
                         <Description
-                            title={`We have 25+ years of experience.`}
-                            description={`Now you can start trading Bitcoin, Ethereum and many cryptocurrencies fast, easily and safely from where ever you are. With great margin trading leverage and short sell options available with quick deposit & withdrawal capability, you can start trading with us in seconds.
-                    Cryptocurrencies have become established investment commodities among major financial institutions, and have even been adopted by countries such as Australia and Japan.
-                    Quick Deposits Withdrawals`} />
+                            title={data?.data?.title}
+                            description={data?.data?.description} />
                     </Grid>
                 </Grid>
             </WrapperSection>
             <WrapperSection title={`Other Services`} >
-                {services && <GridItems data={services} slices={3}
-                    render={(service) => <Grid item md={4} xs={12} key={service?.id} ><Card nameSection={Service} service={service}/></Grid>} />}
+                {data && <GridItems data={data?.other_services} slices={3}
+                    render={(service) => <Grid item md={4} xs={12} key={service?.slug} ><Card nameSection={Service} service={service}/></Grid>} />}
             </WrapperSection>
         </>
     )

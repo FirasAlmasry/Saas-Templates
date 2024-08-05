@@ -5,15 +5,20 @@ import Btn from './Buttons/Btn';
 
 const Description = ({ title, description, supDescription, text = 'See More', path }) => {
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }} >
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3, alignItems: { md: 'normal', xs: 'center' } }} >
             <Title color='primary.main' title={title} align='flex-start' />
-            {description && description?.split('.')?.map((part, index) => (
-                <Typography key={index} color={'secondary.text'} variant={'body2'} sx={{ lineHeight: 1.8, }}>{part}</Typography>
-            ))}
+            {description &&
+                <Typography color={'secondary.text'} variant={'body2'} sx={{
+                    lineHeight: 1.8, wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    whiteSpace: 'pre-wrap',
+                }}>{description}</Typography>
+            }
             {supDescription &&
                 <Typography color='secondary.text' variant={'body2'} sx={{
                     position: 'relative',
                     lineHeight: 2,
+                    textWrap: 'break',
                     ml: 3, '::before': {
                         content: '""',
                         position: 'absolute',

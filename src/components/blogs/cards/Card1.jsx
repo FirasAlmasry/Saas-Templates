@@ -3,19 +3,22 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
 import i18next from 'i18next';
-
+import { formatDate } from '../../../utils/helpers';
+import blogCover from './../../../assets/blogs/blog.jpg'
 const Card1 = ({ blogs = {} }) => {    
     const theme = useTheme();
 
-    const { id,title, type, date, img } = blogs;
+    const { slug: slugBlog, title, type, date, image } = blogs;
     const navigate = useNavigate();
     let lng = i18next.language
     return (
-        <MuiCard sx={{ display: 'flex', m: 1, cursor: 'pointer', flexDirection: { md: 'row', xs: 'column' } }} onClick={() => navigate(`/blog/${id}`)}>
+        <MuiCard sx={{ display: 'flex', m: 1, cursor: 'pointer', flexDirection: { md: 'row', xs: 'column' } }} onClick={() => navigate(`/blog/${slugBlog}`)}>
+
             <CardMedia
                 component="img"
-                sx={{ width: {md:200,xs:'100%'} }}
-                image={img}
+                sx={{ width: { md: '100%', xs: '100%' }, height: { md: 100
+                    , xs: '100%' } }}
+                image={type === 'photo' ? image : blogCover}
                 alt="Blog cover"
             />
             <MuiBox sx={{ display: 'flex', flexDirection: 'column', width: '100%', position: 'relative' }}>
@@ -32,11 +35,11 @@ const Card1 = ({ blogs = {} }) => {
                         borderColor: 'transparent transparent white transparent',
                     }
                 }}>
-                    <Typography component="div" variant="h6" color={'secondary.main'}>
+                    <Typography component="div" variant="h6" color={'primary.main'}>
                         {title}
                     </Typography>
-                    <Typography variant="subtitle1" color={"secondary.main"} component="div">
-                        {type}, {date}
+                    <Typography variant="subtitle1" color={"secondary.text"} component="div">
+                        {formatDate(date)}
                     </Typography>
                 </CardContent>
             </MuiBox>

@@ -1,30 +1,22 @@
-import React, { lazy, Suspense } from 'react'
+import React, { Suspense } from 'react'
 import LoadingPage from '../../global/LoadingPage';
-
-const Footer1 = lazy(() => import('./Footer1'));
-const Footer2 = lazy(() => import('./Footer2'));
-const Footer3 = lazy(() => import('./Footer3'));
-
+import importComponent from '../../../utils/importComponent';
+import { useBasicData } from '../../../hooks/useBasicData';
 
 const Footer = () => {
-    const renderFooter = () => {
-        const data = { footerSection: 'footer3', }
-        switch (data.footerSection) {
-            case 'footer1':
-                return <Footer1 />;
-            case 'footer2':
-                return <Footer2 />;
-            case 'footer3':
-                return <Footer3 />;
-            default:
-                return null;
-        }
-    };
-  return (
-    <Suspense fallback={<LoadingPage/>}>
-            {renderFooter()}
+    const {isLoading, basicData} = useBasicData()
+
+    const data = { footerSection: 'Footer1', }
+
+    const Component = importComponent(`/Footer/footers/${data.footerSection}`);
+
+    if (isLoading) return <LoadingPage />
+
+    return (
+        <Suspense fallback={<LoadingPage />}>
+            <Component data={basicData?.data} />
         </Suspense>
-  )
+    )
 }
 
 export default Footer

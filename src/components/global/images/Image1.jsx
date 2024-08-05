@@ -21,7 +21,7 @@ const Image1 = ({ img }) => {
                         borderStyle: 'solid',
                         borderColor: `transparent transparent white transparent`,
                     },
-                    height: '100%'
+                    height: '20rem'
                 }}
             >
                 <CardMedia

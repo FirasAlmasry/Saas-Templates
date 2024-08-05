@@ -5,12 +5,11 @@ import MenuIcon from "@mui/icons-material/Menu";
 import i18next from "i18next";
 import NavDrawer from "./NavDrawer";
 import TransLang from "./TransLang"
-import logo from './../../../assets/Logo/logo.png'
 import { useTheme } from '@mui/material/styles';
 import { Pages } from "../../../constants";
 import DarkModeToggle from "../../global/DarkModeToggle";
 
-function NavBar() {
+function Navbar2({data}) {
       const theme = useTheme();
 
     let lng = i18next.language
@@ -53,7 +52,7 @@ function NavBar() {
                                 marginInlineStart: 8,
                                 width: '35%'
                             }}>
-                            <img src={logo} alt="logo" className="nav-logo" />
+                            <img src={data?.header_logo} alt="logo" className="nav-logo" />
                         </RouterLink>
                         {Pages?.map((page, i) => (
                             <StyledLink
@@ -81,7 +80,7 @@ function NavBar() {
                                     textDecoration: "none",
                                     marginInlineStart: 8
                                 }}>
-                                <img src={logo} alt="logo" className="nav-logo" ></img>
+                                <img src={data?.header_logo} alt="logo" className="nav-logo" ></img>
                             </RouterLink>
                             <IconButton onClick={() => setDrawer(true)}>
                                 <MenuIcon sx={{ fontSize: '2rem', color: theme.palette.primary.main }} />
@@ -94,4 +93,4 @@ function NavBar() {
         </>
     );
 }
-export default NavBar;
+export default Navbar2;

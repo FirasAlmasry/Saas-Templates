@@ -5,7 +5,7 @@ import { useTheme } from '@mui/material/styles';
 const Card3 = ({ goals }) => {
     const theme = useTheme();
 
-    const { img, title, description } = goals
+    const { image, title, description } = goals
     return (
         <Box
          className='card rotate' 
@@ -19,7 +19,7 @@ const Card3 = ({ goals }) => {
                 <CardMedia
                     component={'img'}
                     sx={{ objectFit:'scale-down' }}
-                    src={img}
+                    src={image}
                        className='rotate' 
                     title="green iguana"
                 />

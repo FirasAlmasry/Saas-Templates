@@ -2,7 +2,7 @@ import img from './../assets/projects/project1.png'
 
 export const projects = [
     {
-        id: 1,
+        slug: 1,
         name: 'Project',
         description: `Taking the time to manage your money better 
         can really pay off. It can help you stay on top 
@@ -10,7 +10,7 @@ export const projects = [
         img: img,
     },
     {
-        id: 2,
+        slug: 2,
         name: 'Project',
         description: `Use our Budget planner to keep on top of 
         your spending, use our tool to work out what
@@ -18,7 +18,7 @@ export const projects = [
         img: img,
     },
     {
-        id: 3,
+        slug: 3,
         name: 'Project',
         description: `Support in person, over the phone and online. 
         Web chat is available from 8am to 8pm or you
@@ -26,7 +26,7 @@ export const projects = [
         img: img,
     },
     {
-        id: 4,
+        slug: 4,
         name: 'Project',
         description: `Taking the time to manage your money better 
         can really pay off. It can help you stay on top 
@@ -34,7 +34,7 @@ export const projects = [
         img: img,
     },
     {
-        id: 5,
+        slug: 5,
         name: 'Project',
         description: `Use our Budget planner to keep on top of 
         your spending, use our tool to work out what
@@ -42,7 +42,7 @@ export const projects = [
         img: img,
     },
     {
-        id: 6,
+        slug: 6,
         name: 'Project',
         description: `Support in person, over the phone and online. 
         Web chat is available from 8am to 8pm or you
@@ -50,7 +50,7 @@ export const projects = [
         img: img,
     },
     {
-        id: 7,
+        slug: 7,
         name: 'Project',
         description: `Taking the time to manage your money better 
         can really pay off. It can help you stay on top 
@@ -58,7 +58,7 @@ export const projects = [
         img: img,
     },
     {
-        id: 8,
+        slug: 8,
         name: 'Project',
         description: `Use our Budget planner to keep on top of 
         your spending, use our tool to work out what
@@ -66,7 +66,7 @@ export const projects = [
         img: img,
     },
     {
-        id: 9,
+        slug: 9,
         name: 'Project',
         description: `Support in person, over the phone and online. 
         Web chat is available from 8am to 8pm or you

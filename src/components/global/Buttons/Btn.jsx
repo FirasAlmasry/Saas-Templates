@@ -2,7 +2,14 @@ import { Button } from '@mui/material'
 import React from 'react'
 import { useTheme } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
-const Btn = ({ bg, color, text = 'See More', path, type = 'button', width= 'fit-content' }) => {
+import i18next from 'i18next';
+
+
+const lng = i18next.language
+const btnText = lng === 'en' ? 'See More' : 'المزيد'
+
+const Btn = ({ bg, color, text = btnText, path, type = 'button', width= 'fit-content' }) => {
+    
     const navigate = useNavigate() 
     const theme = useTheme();
 

@@ -6,12 +6,12 @@ import { useTheme as themeMobile } from '@emotion/react';
 const Card2 = ({ goals }) => {
         const theme = useTheme();
 
-  const { img, title, description } = goals
+  const { image, title, description } = goals
 
   const themeM = themeMobile();
   const isMobile = useMediaQuery(themeM.breakpoints.down('sm'));
   return (
-    <Box sx={{ m: 1, height: '100%' }} className='card rotate' >
+    <Box sx={{ m: 1, height: '95%' }} className='card rotate' >
       <Box
         sx={{
           textAlign: 'center',
@@ -24,7 +24,7 @@ const Card2 = ({ goals }) => {
         <CardMedia
           component={'img'}
           className='rotate' 
-          src={img}
+          src={image}
           sx={{
             p: 1,
             width: '50px',

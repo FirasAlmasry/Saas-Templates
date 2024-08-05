@@ -4,13 +4,13 @@ import Search from './Search'
 import Categories from './Categories'
 import PopularTags from './PopularTags'
 
-const BlogFilter = () => {
+const BlogFilter = ({data}) => {
   return (
     <>
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, mx: { md: '10%', xs: '0' }, my: { md: '0', xs: 2 } }} >
         <Search />
-        <Categories />
-        <PopularTags />
+        <Categories cat={data?.categories}/>
+        <PopularTags tags={data?.tags} />
       </Box>
     </>
   )

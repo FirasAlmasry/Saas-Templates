@@ -1,20 +1,14 @@
 import { Box, CardMedia, useMediaQuery } from '@mui/material';
 import React from 'react';
 import Carousel from "react-material-ui-carousel";
-import slideImg from './../../../assets/Hero/slider.png';
 import HeroText from './HeroText';
 import i18next from 'i18next';
 import { useTheme as themeMobile } from '@emotion/react';
 
-const Sliders = () => {
+const Sliders = ({data}) => {
     const themeM = themeMobile();
   const isMobile = useMediaQuery(themeM.breakpoints.down('sm'));
-    const images = [
-        slideImg,
-        slideImg,
-        slideImg,
-        slideImg,
-    ];
+
     let lng = i18next.language
     return (
         <Carousel
@@ -52,7 +46,7 @@ const Sliders = () => {
                 }
             }}
         >
-            {images.map((img, i) => (
+            {data?.slider?.map((res, i) =>
                 <Box
                     key={i}
                     sx={{
@@ -65,9 +59,7 @@ const Sliders = () => {
                     }}
                 >
                     <Box sx={{ width: { md: '45%', xs: '100%' } }} >
-                        <HeroText title={`Create Amazing
-Print & Design`} desc={`Beautiful, customizable template, with a ton of web blocks 
-to create an amazing website that looks`} btn={`Read More`} />
+                        <HeroText title={res?.title} desc={res?.description} btn={res?.btn_text} path={res?.btn?.link} />
                     </Box>
                     <CardMedia
                         sx={{
@@ -80,10 +72,10 @@ to create an amazing website that looks`} btn={`Read More`} />
                         }}
                         component="img"
                         alt={`slide-${i}`}
-                        src={img}
+                        src={res?.image}
                     />
                 </Box>
-            ))}
+            )}
         </Carousel>
     );
 }

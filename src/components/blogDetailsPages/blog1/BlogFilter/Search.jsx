@@ -1,17 +1,52 @@
-import React from 'react'
-
+import React, { useEffect, useState } from 'react';
 import { IconButton, InputAdornment, TextField } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import { useTheme } from '@mui/material/styles';
+import { useBlogSearch } from '../../../../hooks/useBlogSearch';
+import { useNavigate } from 'react-router-dom';
+import i18next from 'i18next';
 
 // render
 const Search = () => {
     const theme = useTheme();
+    const navigate = useNavigate();
+    const { searchBlogs, results, isSuccess } = useBlogSearch();
+    const [searchTerm, setSearchTerm] = useState('');
+    const lng = i18next.language
 
+    useEffect(() => {
+        if (results) {
+            navigate('/blogs', { state: { results } });
+        }
+    }, [isSuccess, results, navigate]);
+
+    const handleSearch = () => {
+        searchBlogs(searchTerm);
+    };
+    const adornment = (
+        <InputAdornment position={lng === 'ar' ? 'start' : 'end'}>
+            <IconButton
+                sx={{
+                    backgroundColor: theme.palette.secondary.main,
+                    color: theme.palette.primary.main,
+                    borderRadius: 2,
+                    ':hover': {
+                        backgroundColor: theme.palette.secondary.main,
+                        color: theme.palette.primary.main,
+                    }
+                }}
+                onClick={handleSearch}
+            >
+                <SearchIcon />
+            </IconButton>
+        </InputAdornment>
+    );
     return (
         <>
             <TextField
                 label="Search"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
                 sx={{
                     '.MuiInputLabel-formControl': {
                         color: theme.palette.secondary.main,
@@ -20,25 +55,11 @@ const Search = () => {
                     }
                 }}
                 InputProps={{
-                    endAdornment: (
-                        <InputAdornment>
-                            <IconButton sx={{
-                                backgroundColor: theme.palette.secondary.main,
-                                color: theme.palette.primary.main,
-                                borderRadius: 2,
-                                ':hover': {
-                                    backgroundColor: theme.palette.secondary.main,
-                                    color: theme.palette.primary.main,
-                                }
-                            }} >
-                                <SearchIcon />
-                            </IconButton>
-                        </InputAdornment>
-                    )
+                    [lng === 'ar' ? 'startAdornment' : 'endAdornment']: adornment
                 }}
             />
         </>
-    )
+    );
 }
 
-export default Search
+export default Search;

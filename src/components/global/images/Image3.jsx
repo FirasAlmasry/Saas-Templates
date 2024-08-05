@@ -4,7 +4,7 @@ import React from 'react'
 const Image3 = ({ img }) => {
     return (
         <CardMedia
-            sx={{ height: '100%', borderRadius: '16px' }}
+            sx={{ height: '20rem', borderRadius: '16px' }}
             image={img}
             title="green iguana"
         />

@@ -2,14 +2,14 @@ import React, { Suspense } from 'react'
 import LoadingPage from '../global/LoadingPage';
 import importComponent from '../../utils/importComponent';
 
-const Hero = ({data}) => {
+const Hero = ({ nameSection, data }) => {
 
-  const Component = importComponent(`/Heros/${data.heroSection}/${data.heroSection}`);
+  const Component = importComponent(`/Heros/${nameSection.heroSection}/${nameSection.heroSection}`);
 
   return (
-      <Suspense fallback={<LoadingPage />}>
-          <Component />
-      </Suspense>
+    <Suspense fallback={<LoadingPage />}>
+      <Component data={data} />
+    </Suspense>
   )
 }
 

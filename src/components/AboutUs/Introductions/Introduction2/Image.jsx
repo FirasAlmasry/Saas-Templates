@@ -30,7 +30,7 @@ const Image = ({ img }) => {
                     <CardMedia
                         component={'img'}
                         src={img}
-                        sx={{ width: '100%', height: '100%', my: 2 }}
+                        sx={{ width: '100%', height: '20rem', my: 2, objectFit:'contain' }}
                     />
                 </div>
             </Box>

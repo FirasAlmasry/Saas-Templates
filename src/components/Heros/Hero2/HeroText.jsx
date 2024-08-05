@@ -11,7 +11,7 @@ const HeroText = ({ title, desc, btn }) => {
     return (
         <>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                <Typography variant={isMobile ? 'body1' : 'h4'} color={'primary.main'} >{title}</Typography>
+                <Typography variant={isMobile ? 'body1' : 'h4'} color={'primary.text'} >{title}</Typography>
                 <Typography variant={isMobile ? 'body1' : 'body1'} color={'secondary.text'}>{desc}</Typography>
                 <Btn bg={theme.palette.primary.main} color={theme.palette.secondary.main} text={btn} path={'/about'} />
             </Box>

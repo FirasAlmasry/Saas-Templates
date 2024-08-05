@@ -1,27 +1,18 @@
-import React, { lazy, Suspense } from 'react'
+import React, { Suspense } from 'react'
 import LoadingPage from '../global/LoadingPage';
-
-const NavBar1 = lazy(() => import('./Navbar1'));
-const NavBar2 = lazy(() => import('./Navbar2'));
-const NavBar3 = lazy(() => import('./Navbar3'));
-const NavBar4 = lazy(() => import('./Navbar4'));
+import importComponent from '../../utils/importComponent';
+import { useBasicData } from '../../hooks/useBasicData';
 
 const NavBar = () => {
+    const { isLoading, basicData } = useBasicData()
+    if(isLoading) return <LoadingPage />
+    const nameSection = { navbarSection: 'Navbar1', }
 
-    const renderNavbar = () => {
-        const data = { navbarSection: 'navbar1', }
-        switch (data.navbarSection) {
-            case 'navbar1': return <NavBar1 />;
-            case 'navbar2': return <NavBar2 />;
-            case 'navbar3': return <NavBar3 />;
-            case 'navbar4': return <NavBar4 />;
-            default: return null;
-        }
-    };
+    const Component = importComponent(`/NavBars/${nameSection.navbarSection}/${nameSection.navbarSection}`);
 
     return (
         <Suspense fallback={<LoadingPage />}>
-            {renderNavbar()}
+            <Component data={basicData?.data} />
         </Suspense>
     )
 }

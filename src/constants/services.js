@@ -3,7 +3,7 @@ import img from './../assets/services/service1.png'
 
 export const services = [
     {
-        id: 1,
+        slug: 1,
         icon:icon,
         title: "We are helpers",
         description: `Taking the time to manage your money better 
@@ -12,7 +12,7 @@ export const services = [
         img: img,
     },
     {
-        id: 2,
+        slug: 2,
         icon:icon,
         title: "We are helpers",
         description: `Use our Budget planner to keep on top of 
@@ -21,7 +21,7 @@ export const services = [
         img: img,
     },
     {
-        id: 3,
+        slug: 3,
         icon:icon,
         title: "We are helpers",
         description: `Support in person, over the phone and online. 
@@ -30,7 +30,7 @@ export const services = [
         img: img,
     },
     {
-        id: 4,
+        slug: 4,
         icon:icon,
         title: "We are helpers",
         description: `Taking the time to manage your money better 
@@ -39,7 +39,7 @@ export const services = [
         img: img,
     },
     {
-        id: 5,
+        slug: 5,
         icon:icon,
         title: "We are helpers",
         description: `Use our Budget planner to keep on top of 
@@ -48,7 +48,7 @@ export const services = [
         img: img,
     },
     {
-        id: 6,
+        slug: 6,
         icon:icon,
         title: "We are helpers",
         description: `Support in person, over the phone and online. 
@@ -57,7 +57,7 @@ export const services = [
         img: img,
     },
     {
-        id: 7,
+        slug: 7,
         icon:icon,
         title: "We are helpers",
         description: `Taking the time to manage your money better 
@@ -66,7 +66,7 @@ export const services = [
         img: img,
     },
     {
-        id: 8,
+        slug: 8,
         icon:icon,
         title: "We are helpers",
         description: `Use our Budget planner to keep on top of 
@@ -75,7 +75,7 @@ export const services = [
         img: img,
     },
     {
-        id: 9,
+        slug: 9,
         icon:icon,
         title: "We are helpers",
         description: `Support in person, over the phone and online. 

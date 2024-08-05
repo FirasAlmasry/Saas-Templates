@@ -2,13 +2,13 @@ import React, { Suspense } from 'react'
 import LoadingPage from '../../global/LoadingPage';
 import importComponent from '../../../utils/importComponent';
 
-const Intro = ({ nameSection }) => {
+const Intro = ({ nameSection, data }) => {
 
   const Component = importComponent(`/AboutUs/Introductions/${nameSection?.introSection}`);
 
   return (
     <Suspense fallback={<LoadingPage />}>
-      <Component />
+      <Component data={data}/>
     </Suspense>
   )
 }

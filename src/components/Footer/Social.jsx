@@ -6,7 +6,10 @@ import styled from 'styled-components';
 import { useTheme } from '@mui/material/styles';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-const Social = () => {
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+// import SnapIcon from './../../assets/footer/Snap.svg'; // Import SVG as a path
+
+const Social = ({ data }) => {
     const theme = useTheme();
 
     const StyledBox = styled.div`
@@ -35,21 +38,41 @@ const Social = () => {
     return (
         <>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, mt: 2 }}>
-                <ContactSocial link={'/'} text={'0109897868090'}>
-                    <StyledBox>
-                        <InstagramIcon />
-                    </StyledBox>
-                </ContactSocial>
-                <ContactSocial link={'/'} text={'180 St West Side, New York, USA'}>
-                    <StyledBox>
-                        <FacebookIcon />
-                    </StyledBox>
-                </ContactSocial>
-                <ContactSocial link={'/'} text={'contact.usa@landmark.com'}>
-                    <StyledBox>
-                        <WhatsAppIcon />
-                    </StyledBox>
-                </ContactSocial>
+                {data?.instagram_url &&
+                    <ContactSocial link={data?.instagram_url} text={data?.instagram_url}>
+                        <StyledBox>
+                            <InstagramIcon />
+                        </StyledBox>
+                    </ContactSocial>
+                }
+                {data?.facebook_url &&
+                    <ContactSocial link={data?.facebook_url} text={data?.facebook_url}>
+                        <StyledBox>
+                            <FacebookIcon />
+                        </StyledBox>
+                    </ContactSocial>
+                }
+                {data?.linkedin_url &&
+                    <ContactSocial link={data?.linkedin_url} text={data?.linkedin_url}>
+                        <StyledBox>
+                            <LinkedInIcon />
+                        </StyledBox>
+                    </ContactSocial>
+                }
+                {data?.whatsapp_number &&
+                    <ContactSocial link={data?.whatsapp_number} text={data?.whatsapp_number}>
+                        <StyledBox>
+                            <WhatsAppIcon />
+                        </StyledBox>
+                    </ContactSocial>
+                }
+                {/* {data?.snapchat_url &&
+                    <ContactSocial link={data?.snapchat_url} text={data?.snapchat_url}>
+                        <StyledBox>
+                            <img src={SnapIcon} alt="Snapchat" /> 
+                        </StyledBox>
+                    </ContactSocial>
+                } */}
             </Box>
         </>
     )

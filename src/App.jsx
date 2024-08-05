@@ -15,7 +15,7 @@ import { BrowserRouter } from 'react-router-dom';
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 0,
+      staleTime: 1000,
     },
   },
 });
@@ -44,19 +44,21 @@ function App() {
     document.dir = currentLanguage.dir || 'rtl';
     document.getElementsByTagName('html')[0].setAttribute('lang', currentLanguage.code || 'ar');
   }, [currentLanguage, t]);
-
   return (
-    <DarkModeProvider>
-      <QueryClientProvider client={queryClient}>
-        <ReactQueryDevtools initialIsOpen={false} buttonPosition='bottom-left' />
-        <CssBaseline />
-        <HelmetProvider>
-          <BrowserRouter>
-            <RoutesPath />
-          </BrowserRouter>
-        </HelmetProvider>
-      </QueryClientProvider>
-    </DarkModeProvider>
+  <>
+      
+      <DarkModeProvider>
+        <QueryClientProvider client={queryClient}>
+          <ReactQueryDevtools initialIsOpen={false} buttonPosition='top-right' />
+          <CssBaseline />
+          <HelmetProvider>
+            <BrowserRouter>
+              <RoutesPath />
+            </BrowserRouter>
+          </HelmetProvider>
+        </QueryClientProvider>
+      </DarkModeProvider>
+  </>
   );
 }
 

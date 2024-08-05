@@ -3,7 +3,7 @@ import React from 'react'
 import { useTheme as themeMobile } from '@emotion/react';
 import { useTheme } from '@mui/material/styles';
 
-const Section = ({ title, img, description }) => {
+const Section = ({ title, img, description, supDesc }) => {
     const theme = useTheme();
 
     const themeM = themeMobile();
@@ -22,10 +22,14 @@ const Section = ({ title, img, description }) => {
                         height: '50px',
                         borderRadius: '8px',
                         objectFit: 'contain',
-                        margin: 'auto',
+                        margin: { md: '0', xs:'auto' },
                     }} />
                 <Typography variant={isMobile ? 'h6' : 'h5'} color={'primary.main'} fontWeight={400} >{title}</Typography>
                 <Typography variant={'subtitle2'} color={'secondary.main'}>{description}</Typography>
+                {
+                    supDesc && 
+                    <Typography variant={'subtitle2'} color={'secondary.main'}>{supDesc}</Typography>
+            }
             </Box>
         </>
     )

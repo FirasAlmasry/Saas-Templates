@@ -5,7 +5,7 @@ import { useTheme } from '@mui/material/styles';
 
 
 const Card2 = ({ projects }) => {
-    const { id, name, description, img } = projects || {};
+    const { slug: projectSlug, name, description, images } = projects || {};
     const theme = useTheme();
 
     return (
@@ -14,7 +14,7 @@ const Card2 = ({ projects }) => {
                 <Box className="card-front">
                     <CardMedia
                         component={'img'}
-                        src={img}
+                        src={images[0]?.image}
                         sx={{
                             objectFit: 'cover',
                             width: '100%',
@@ -29,7 +29,7 @@ const Card2 = ({ projects }) => {
                     <Box className="content">
                         <Typography variant='h5'>{name}</Typography>
                         <Typography>{description}</Typography>
-                        <Btn path={`/project/${id}`}>
+                        <Btn path={`/project/${projectSlug}`}>
                             See More
                         </Btn>
                     </Box>

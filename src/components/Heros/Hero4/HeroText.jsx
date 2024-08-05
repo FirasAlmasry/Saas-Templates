@@ -27,7 +27,7 @@ const HeroText = ({ title, desc, btn }) => {
     return (
         <>
             <StyledBox>
-                <Typography variant={isMobile ? 'h6' : 'h3'} color={'primary.main'} >{title}</Typography>
+                <Typography variant={isMobile ? 'h6' : 'h3'} color={'primary.text'} >{title}</Typography>
                 <Typography variant={'body1'} color={'secondary.text'} >{desc}</Typography>
                 <Btn text={btn} path={'/about'} />
             </StyledBox>

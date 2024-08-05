@@ -2,23 +2,28 @@ import React from 'react'
 import WrapperSection from '../../../global/WrapperSection'
 import { Grid } from '@mui/material'
 import Image from './Image'
-import aboutImage from './../../../../assets/about/about.png';
+// import aboutImage from './../../../../assets/about/about.png';
 import Description from '../../../global/Description';
+import i18next from 'i18next';
 
-const Intro = () => {
+const Intro = ({data}) => {
+  const lng = i18next.language
+  const btnText = lng === 'en' ? 'See More' : 'المزيد'
+  const { main_title, description, about_section_image, btn_text = btnText, btn_link } = data;
+
   return (
     <>
       <WrapperSection>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} alignItems={'center'}>
           <Grid item md={5} xs={12}>
-            <Image img={aboutImage} />
+            <Image img={about_section_image} />
           </Grid>
           <Grid item md={7} xs={12}>
             <Description
-              title={`We have 25+ years of experience.`}
-              description={`Now you can start trading Bitcoin, Ethereum and many cryptocurrencies fast, easily and safely from where ever you are. With great margin trading leverage and short sell options available with quick deposit & withdrawal capability, you can start trading with us in seconds.
-                    Cryptocurrencies have become established investment commodities among major financial institutions, and have even been adopted by countries such as Australia and Japan.
-                    Quick Deposits Withdrawals`}/>
+              title={main_title}
+              description={description}
+              text={btn_text}
+              path={`/${btn_link}` || '/about'}/>
           </Grid>
         </Grid>
       </WrapperSection>

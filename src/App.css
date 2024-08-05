@@ -8,7 +8,12 @@ body:lang(en),
 *:lang(en) {
   font-family: "Signika", sans-serif !important;
 }
-
+.nav-logo {
+  width: 4rem;
+  height: 4rem;
+  margin: 8px 0;
+  object-fit: scale-down;
+}
 .overlay {
   position: absolute;
   top: 0;
@@ -31,14 +36,14 @@ body:lang(en),
 }
 .card:hover .rotate {
   transition: 0.5s;
-  transform: rotate(360deg) scale(1.3) ;
+  transform: rotate(360deg) scale(1.3);
 }
 .blur {
   filter: blur(2px);
 }
-.grayscale {
+/* .grayscale {
   filter: grayscale(1);
-}
+} */
 .reset:hover {
   filter: grayscale(0) blur(0);
 }
@@ -88,5 +93,5 @@ body:lang(en),
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap:2rem
+  gap: 2rem;
 }

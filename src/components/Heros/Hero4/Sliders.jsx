@@ -3,17 +3,10 @@ import React from 'react'
 import Carousel from "react-material-ui-carousel";
 import HeroText from './HeroText';
 import { useTheme } from '@mui/material/styles';
-import slideImg from './../../../assets/Hero/slider.png'
 
-const Sliders = () => {
+const Sliders = ({ data }) => {
         const theme = useTheme();
 
-    const images = [
-        slideImg,
-        slideImg,
-        slideImg,
-        slideImg,
-    ]
     return (
         <>
             <Carousel
@@ -43,9 +36,9 @@ const Sliders = () => {
                     }
                 }}
             >
-                {images?.map((res, i) => 
+                {data?.slider?.map((res, i) => 
                     <Box key={i} sx={{ zIndex: 999 }}>
-                        <HeroText title={`title template four Here`} desc={`description template four Here`} btn={`see more`} />
+                        <HeroText title={res?.title} desc={res?.description} btn={res?.btn_text} path={res?.btn?.link} />
                         <div className="overlay"></div>
                         <CardMedia
                             sx={{
@@ -56,8 +49,8 @@ const Sliders = () => {
                                 objectFit: "cover",
                             }}
                             component="img"
-                            alt={res}
-                            src={res} /> 
+                            alt={res?.image}
+                            src={res?.image} /> 
                     </Box>
                             )} 
             </Carousel> 

@@ -10,7 +10,6 @@ import { BasicSelect as TransLang } from "./TransLang"
 import i18next from "i18next";
 import { useTheme } from '@mui/material/styles';
 import { Pages } from "../../../constants";
-import logo from './../../../assets/Logo/logo.png'
 import './Nav.css'
 import { styled } from '@mui/material/styles';
 import DarkModeToggle from "../../global/DarkModeToggle";
@@ -18,14 +17,14 @@ import DarkModeToggle from "../../global/DarkModeToggle";
 
 
 
-function NavBar() {
-      const theme = useTheme();
+function Navbar1({data}) {
+    const theme = useTheme();
 
     const StyledLink = styled(RouterLink)(({ theme }) => ({
         textTransform: 'capitalize',
         color: theme.palette.nav.link,
         textDecoration: 'none',
-        transition:'0.5s',
+        transition: '0.5s',
         '&:hover': {
             color: theme.palette.nav.hover,
             textDecoration: 'underline',
@@ -44,8 +43,8 @@ function NavBar() {
 
     return (
         <>
-            <Box sx={{ backgroundColor: theme.palette.background.section, py:2 }} >
-                <AppBar position="static" elevation={0} className="appNav" sx={{backgroundColor:theme.palette.nav.main}} >
+            <Box sx={{ backgroundColor: theme.palette.nav.main, py: 2 }} >
+                <AppBar position="static" elevation={0} className="appNav" sx={{ backgroundColor: theme.palette.nav.main }} >
                     <Toolbar disableGutters>
                         <Box
                             sx={{
@@ -61,7 +60,7 @@ function NavBar() {
                                     textDecoration: "none",
                                     marginInlineStart: 8
                                 }}>
-                                <img src={logo} alt="logo" className="nav-logo" />
+                                <img src={data?.header_logo} alt="logo" className="nav-logo" />
                             </RouterLink>
                             {Pages?.map((page, i) => (
                                 <StyledLink
@@ -90,7 +89,7 @@ function NavBar() {
                                         textDecoration: "none",
                                         marginInlineStart: 8
                                     }}>
-                                    <img src={logo} alt="logo" className="nav-logo" ></img>
+                                    <img src={data?.header_logo} alt="logo" className="nav-logo" ></img>
                                 </RouterLink>
                                 <IconButton onClick={() => setDrawer(true)}>
                                     <MenuIcon sx={{ fontSize: '2rem', color: theme.palette.primary.main }} />
@@ -104,4 +103,4 @@ function NavBar() {
         </>
     );
 }
-export default NavBar;
+export default Navbar1;

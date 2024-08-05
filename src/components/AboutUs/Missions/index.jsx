@@ -2,26 +2,21 @@ import React from 'react'
 import WrapperSection from '../../global/WrapperSection'
 import { Grid } from '@mui/material'
 import Image from './../Image'
-import aboutImage from './../../../assets/about/about.png';
 import Description from '../../global/Description';
 
-const Missions = () => {
+const Missions = ({data}) => {
+  const { mission_title, mission_description, mission_image } = data
   return (
     <>
       <WrapperSection>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} alignItems={'center'}>
           <Grid item md={7} xs={12}>
             <Description
-              title={`Our Mission`}
-              description={`Ard alsafa is supporting safety green buildings regulation in execution of their pertinent projects.
-As most MEP systems inspiriting buildings like most active systems in the human body.they have 
-As most MEP systems inspiriting buildings like most active systems in the human body.they have 
-As most MEP systems inspiriting buildings like most active systems in the human body.they have 
-to be strictly complied with green building regulations.
-`}/>
+              title={mission_title}
+              description={mission_description}/>
           </Grid>
           <Grid item md={5} xs={12}>
-            <Image img={aboutImage} />
+            <Image img={mission_image} />
           </Grid>
         </Grid>
       </WrapperSection>
