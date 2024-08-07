@@ -44,7 +44,7 @@ const Sliders = ({ data }) => {
             >
                 {data?.slider?.map((res, i) =>
                     <Box key={i} sx={{ zIndex: 999 }}>
-                        <HeroText title={res?.title} desc={res?.description} btn={res?.btn_text} path={res?.btn?.link}/>
+                        <HeroText title={res?.title} desc={res?.description} btn={res?.btn_text} path={res?.btn_link}/>
                         <div className="overlay"></div>
                         <CardMedia
                             key={i}

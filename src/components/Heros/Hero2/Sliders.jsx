@@ -59,7 +59,7 @@ const Sliders = ({data}) => {
                     }}
                 >
                     <Box sx={{ width: { md: '45%', xs: '100%' } }} >
-                        <HeroText title={res?.title} desc={res?.description} btn={res?.btn_text} path={res?.btn?.link} />
+                        <HeroText title={res?.title} desc={res?.description} btn={res?.btn_text} path={res?.btn_link} />
                     </Box>
                     <CardMedia
                         sx={{
