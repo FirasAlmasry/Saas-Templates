@@ -6,11 +6,11 @@ import TransLang from "./TransLang"
 import { Pages } from "../../../constants";
 import i18next from "i18next";
 import { IconButton } from "@mui/material";
-import logo from './../../../assets/Logo/logo.png'
+// import logo from './../../../assets/Logo/logo.png'
 import CloseIcon from '@mui/icons-material/Close';
 import DarkModeToggle from "../../global/DarkModeToggle";
 
-export default function NavDrawer({ setDrawer, drawer }) {
+export default function NavDrawer({ setDrawer, drawer, data }) {
 
     const StyledLink = styled(Link)(({ theme }) => ({
         textDecoration: "none",
@@ -57,7 +57,7 @@ export default function NavDrawer({ setDrawer, drawer }) {
                                 alignItems: "center",
                             }}>
                             <Link to="/">
-                                <img src={logo} style={{ height:'fit-contain' }} alt="logo" className="nav-logo" ></img>
+                                <img src={data?.header_logo} style={{ height:'fit-contain' }} alt="logo" className="nav-logo" ></img>
                             </Link>
                             <IconButton onClick={() => setDrawer(false)}>
                                 <CloseIcon />

@@ -14,14 +14,12 @@ const Projects = () => {
 
   const { isLoading: isLoadingNameSection, nameSection } = useNameSection('our-projects');
 
-  // التحقق من أن البيانات متوفرة قبل محاولة الوصول إلى `sections`
   const { sections } = nameSection?.data || {};
 
   const Projects = {
     projectSection: sections?.find(section => section.name.includes('Projects'))?.component?.[0]?.name,
   };
 
-  console.log("🚀 ~ Projects ~ structured data:", Projects);
   const [page, setPage] = useState(1);
   const { projects, isLoading } = useProjects(page)
   if (isLoading || isLoadingNameSection) return <LoadingPage />

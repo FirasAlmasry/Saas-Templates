@@ -2,7 +2,7 @@ import { Box, Typography, useMediaQuery } from '@mui/material'
 import React from 'react'
 import { useTheme } from '@emotion/react'
 
-const Title = ({ title, description, secColor = 'secondary.text', color = 'secondary.main', align= 'center' }) => {
+const Title = ({ title, description, secColor = 'secondary.text', color = 'primary.main', align= 'center' }) => {
     const themeM = useTheme();
     const isMobile = useMediaQuery(themeM.breakpoints.down('sm'));
     return (

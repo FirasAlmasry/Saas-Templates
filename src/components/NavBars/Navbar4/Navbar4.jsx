@@ -123,7 +123,7 @@ function Navbar4({data}) {
                     </Toolbar>
                     </Container>
             </AppBar>
-            <NavDrawer drawer={drawer} setDrawer={setDrawer} />
+            <NavDrawer drawer={drawer} setDrawer={setDrawer} data={data}/>
         </>
     );
 }

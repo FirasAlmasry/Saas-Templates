@@ -1,18 +1,18 @@
 import * as React from "react";
 import Drawer from "@mui/material/Drawer";
-import { Box, styled } from "@mui/material";
+import { Box, styled, useTheme } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import { BasicSelect as TransLang } from "./TransLang"
 import { Pages } from "../../../constants";
 import i18next from "i18next";
 import { IconButton } from "@mui/material";
-import logo from './../../../assets/Logo/logo.png'
+// import logo from './../../../assets/Logo/logo.png'
 import CloseIcon from '@mui/icons-material/Close';
 import DarkModeToggle from "../../global/DarkModeToggle";
 
-export default function NavDrawer({ setDrawer, drawer }) {
+export default function NavDrawer({ setDrawer, drawer, data }) {
     let lng = i18next.language
-
+    const theme = useTheme()
     const StyledLink = styled(RouterLink)(({ theme }) => ({
         textDecoration: "none",
         fontSize: 14,
@@ -29,14 +29,15 @@ export default function NavDrawer({ setDrawer, drawer }) {
         <div>
             <React.Fragment>
                 <Drawer
-                    anchor={lng === 'en' ? 'left' : 'right'}
+                    anchor={'top'}
                     open={drawer}
                     onClose={() => setDrawer(false)}
                     sx={{
                         '.MuiDrawer-paper': {
-                            height: '80% !important ',
                             borderBottomRightRadius: '16px',
-                            overflowY: 'auto'
+                            overflowY: 'auto',
+                            backgroundColor: theme.palette.primary.main,
+                            alignItems: 'center'
                         }
                     }}
                 >
@@ -46,10 +47,13 @@ export default function NavDrawer({ setDrawer, drawer }) {
                             gap: 2,
                             display: "flex",
                             flexDirection: "column",
-                            textAlign: lng === 'en' ? 'left' : 'right',
+                            textAlign: 'center',
                             padding: "40px 20px",
                         }}>
-                        <Box
+                                <IconButton onClick={() => setDrawer(false)} sx={{position:'absolute', right:'25px'}} >
+                                    <CloseIcon />
+                                </IconButton>
+                        {/* <Box
                             sx={{
                                 flexGrow: 0,
                                 display: { md: "none", xs: "flex" },
@@ -57,13 +61,10 @@ export default function NavDrawer({ setDrawer, drawer }) {
                                 width: "100%",
                                 alignItems: "center",
                             }}>
+                        </Box> */}
                             <RouterLink to="/">
-                                <img src={logo} alt="logo" style={{ width: '50%' }} ></img>
+                                <img src={data?.header_logo} alt="logo" style={{ width: '50%' }} ></img>
                             </RouterLink>
-                            <IconButton onClick={() => setDrawer(false)}>
-                                <CloseIcon />
-                            </IconButton>
-                        </Box>
                         {Pages?.map((page, i) => (
                             <StyledLink
                                 key={i}

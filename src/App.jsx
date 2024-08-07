@@ -49,7 +49,7 @@ function App() {
       
       <DarkModeProvider>
         <QueryClientProvider client={queryClient}>
-          <ReactQueryDevtools initialIsOpen={false} buttonPosition='top-right' />
+          <ReactQueryDevtools initialIsOpen={false} buttonPosition='top-left' />
           <CssBaseline />
           <HelmetProvider>
             <BrowserRouter>

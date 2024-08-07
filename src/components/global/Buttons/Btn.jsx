@@ -2,13 +2,12 @@ import { Button } from '@mui/material'
 import React from 'react'
 import { useTheme } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
-import i18next from 'i18next';
+import { useTranslation } from 'react-i18next';
 
+const Btn = ({ bg, color, text, path, type = 'button', width = 'fit-content' }) => {
+    const { i18n } = useTranslation();
+    const btnText = text || (i18n.language === 'en' ? 'See More' : 'المزيد');
 
-const lng = i18next.language
-const btnText = lng === 'en' ? 'See More' : 'المزيد'
-
-const Btn = ({ bg, color, text = btnText, path, type = 'button', width= 'fit-content' }) => {
     
     const navigate = useNavigate() 
     const theme = useTheme();
@@ -30,7 +29,7 @@ const Btn = ({ bg, color, text = btnText, path, type = 'button', width= 'fit-con
                     width: width,
                     fontWeight:400
                 }} >
-                {text}
+                {btnText}
             </Button>
         </>
     )

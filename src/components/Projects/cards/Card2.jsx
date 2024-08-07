@@ -29,9 +29,7 @@ const Card2 = ({ projects }) => {
                     <Box className="content">
                         <Typography variant='h5'>{name}</Typography>
                         <Typography>{description}</Typography>
-                        <Btn path={`/project/${projectSlug}`}>
-                            See More
-                        </Btn>
+                        <Btn path={`/project/${projectSlug}`}  />
                     </Box>
                 </Box>
             </Box>

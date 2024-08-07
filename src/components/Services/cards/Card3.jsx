@@ -10,8 +10,7 @@ const Card3 = ({ services }) => {
 
     return (
         <Box sx={{ m: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
-            className='card grayscale reset'
-
+            className='card reset'
             onClick={() => navigate(`/service/${serviceSlug}`)}>
             <Box sx={{
                 p: 2, borderRadius: '50%',
@@ -23,7 +22,7 @@ const Card3 = ({ services }) => {
                     component={'img'}
                     sx={{ height: 240, width: '240px', borderRadius: '50%' }}
                     src={image}
-                    className='blur reset'
+                    className='flash reset'
 
                     title="green iguana"
                 />

@@ -18,7 +18,7 @@ const Card2 = ({ goals }) => {
           p: 2,
           m: 1,
           borderRadius: '0 30px 0 30px',
-          border: `1px solid ${theme.palette.secondary.main}`,
+          border: `1px solid ${theme.palette.primary.main}`,
           height: '100%'
         }}>
         <CardMedia

@@ -47,10 +47,11 @@ const lightPalette = {
     },
     background: {
         default: "#fff",
-        section: "#fff",
+        section: "#f7f7f7",
         card: '#fff',
         input: "#f7f7f7",
         form: "#fff",
+        drawer: ''
     },
 };
 

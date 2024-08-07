@@ -27,7 +27,7 @@ const OurServices = () => {
   return (
     <>
       <Header page_name={services?.service_title} cover={services?.service_cover} />
-      <WrapperSection title={services?.title} >
+      <WrapperSection title={services?.service_title} >
         {services && <GridItems data={services?.data} render={(service) => <Grid item md={4} xs={12} key={service?.slug} ><Card nameSection={Services} service={service}/> </Grid>} />}
         <CustomPagination
           setCurrentPage={setPage}

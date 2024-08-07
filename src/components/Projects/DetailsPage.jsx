@@ -9,12 +9,12 @@ import Image from '../global/images';
 import { useNameSection } from '../../hooks/useNameSection';
 import LoadingPage from '../global/LoadingPage';
 import Slider from '../global/Slider';
+import i18next from 'i18next';
 
 const DetailsPage = ({ data }) => {
-
+    let lng = i18next.language
     const { isLoading: isLoadingNameSection, nameSection } = useNameSection('sengle-project');
 
-    // التحقق من أن البيانات متوفرة قبل محاولة الوصول إلى `sections`
     const { sections } = nameSection?.data || {};
 
     const Project = {
@@ -42,7 +42,7 @@ const DetailsPage = ({ data }) => {
                     </Grid>
                 </Grid>
             </WrapperSection>
-            <WrapperSection title={`Other projects`} >
+            <WrapperSection title={lng === 'en'? `Other projects`: 'مشاريع أخرى'} >
                 {projects && <GridItems data={data?.other_projects} slices={3}
                     render={(project) => <Grid item md={4} xs={12} key={project?.id} ><Card nameSection={Project} project={project} /></Grid>} />}
             </WrapperSection>

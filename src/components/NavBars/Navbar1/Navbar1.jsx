@@ -43,7 +43,7 @@ function Navbar1({data}) {
 
     return (
         <>
-            <Box sx={{ backgroundColor: theme.palette.nav.main, py: 2 }} >
+            <Box sx={{ backgroundColor: theme.palette.nav.main, py: 2, height: '50px', position:'sticky', top:0, zIndex:999 }} >
                 <AppBar position="static" elevation={0} className="appNav" sx={{ backgroundColor: theme.palette.nav.main }} >
                     <Toolbar disableGutters>
                         <Box
@@ -92,14 +92,14 @@ function Navbar1({data}) {
                                     <img src={data?.header_logo} alt="logo" className="nav-logo" ></img>
                                 </RouterLink>
                                 <IconButton onClick={() => setDrawer(true)}>
-                                    <MenuIcon sx={{ fontSize: '2rem', color: theme.palette.primary.main }} />
+                                    <MenuIcon sx={{ fontSize: '2rem', color: theme.palette.secondary.main }} />
                                 </IconButton>
                             </Box>
                         </Box>
                     </Toolbar>
                 </AppBar>
             </Box>
-            <NavDrawer drawer={drawer} setDrawer={setDrawer} />
+            <NavDrawer drawer={drawer} setDrawer={setDrawer} data={data} />
         </>
     );
 }

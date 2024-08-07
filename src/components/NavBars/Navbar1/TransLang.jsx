@@ -18,7 +18,7 @@ export function BasicSelect() {
 
 
     return (
-        <Button onClick={toggleLanguage} sx={{ border: `1px solid ${theme.palette.nav.link}`, backgroundColor: 'transparent' }} >
+        <Button onClick={toggleLanguage} sx={{ border: `1px solid ${theme.palette.nav.link}`, backgroundColor: 'transparent', width:{md:'auto',xs:'fit-content'}, margin:{md:'0',xs:'auto'} }} >
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, flexDirection: 'row-reverse' }} >
                 <Typography color={'nav.link'} fontWeight={'bold'} >{lng === 'en' ? 'العربية' : 'English'}</Typography>
                 <NearMeOutlinedIcon sx={{ fill: theme.palette.secondary.main }} />

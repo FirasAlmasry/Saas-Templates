@@ -29,7 +29,7 @@ const RoutesPath = () => {
         }, [pathname]);
         return null;
     };
-    console.log(basicData?.data?.fav_icon)
+
     return (
         <>
             <Helmet>

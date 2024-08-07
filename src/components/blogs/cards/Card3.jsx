@@ -32,12 +32,11 @@ const Card3 = ({ blogs = {} }) => {
                         sx={{
                             position: 'absolute',
                             bottom: 0,
-                            left: '-7%',
-                            width: 'calc(100%)',
+                            left: 0,
+                            width: '100%',
                             p: 1,
                             pb: 0,
                             backgroundColor: '#fff',
-                            borderRadius: '16px',
                             boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
                             height: "4.5rem",
                         }}>

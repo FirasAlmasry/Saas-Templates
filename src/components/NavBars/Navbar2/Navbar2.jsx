@@ -89,7 +89,7 @@ function Navbar2({data}) {
                     </Box>
                 </Toolbar>
             </AppBar>
-            <NavDrawer drawer={drawer} setDrawer={setDrawer} />
+            <NavDrawer drawer={drawer} setDrawer={setDrawer} data={data}/>
         </>
     );
 }

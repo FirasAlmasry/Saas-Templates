@@ -7,12 +7,12 @@ const Card2 = ({ services }) => {
     const navigate = useNavigate()
     return (
         <Card sx={{ maxWidth: 345, my: 1, boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.20)", cursor: 'pointer', margin:'10px auto' }}
-            className='card grayscale reset'
+            className='card reset'
             onClick={() => navigate(`/service/${serviceSlug}`)} >
             <CardMedia
                 sx={{ height: 140 }}
                 image={image}
-                className='blur reset'
+                className='flash reset'
                 title="green iguana"
             />
             <CardContent>
@@ -20,7 +20,7 @@ const Card2 = ({ services }) => {
                     {title}
                 </Typography>
                 <Typography variant="body2" color={'secondary.main'}>
-                    {description}
+                    {description.slice(0, 225)}
                 </Typography>
             </CardContent>
         </Card>

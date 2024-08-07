@@ -11,19 +11,21 @@ const Card1 = ({ projects }) => {
     const navigate = useNavigate()
     let lng = i18next.language
     return (
-        <MuiCard sx={{ maxWidth: 345, my:2, mx:'auto', position:'relative'}}>
+        <MuiCard sx={{ maxWidth: 345, my: 2, mx: 'auto', position: 'relative' }} className='translateTop'>
             <CardMedia
                 sx={{
-                    height: 240, "::before": {
-                        content: '""',
-                        position: 'absolute',
-                        top: '0', // Adjust based on your requirement
-                        left: lng === 'en' ? '100%' : 0,
-                        transform: 'translateX(-50%)',
-                        borderWidth: '0 100px 100px 100px', // Adjust based on your requirement
-                        borderStyle: 'solid',
-                        borderColor: 'transparent transparent white transparent',
-                    } }}
+                    height: 240,
+                    // "::before": {
+                    //     content: '""',
+                    //     position: 'absolute',
+                    //     top: '0',
+                    //     left: lng === 'en' ? '100%' : 0,
+                    //     transform: 'translateX(-50%)',
+                    //     borderWidth: '0 100px 100px 100px', 
+                    //     borderStyle: 'solid',
+                    //     borderColor: 'transparent transparent white transparent',
+                    // } 
+                }}
                 image={images[0]?.image}
                 title="green iguana"
             />

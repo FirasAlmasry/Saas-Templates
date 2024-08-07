@@ -11,7 +11,7 @@ const Contact2 = ({data, titles}) => {
     return (
         <>
             <WrapperSection title={main_title} >
-                <Grid container spacing={2}>
+                <Grid container spacing={2} alignItems={'center'}>
                     <Grid item md={8} xs={12}><Form title={form_title}/></Grid>
                     <Grid item md={4} xs={12}><Details data={data}/></Grid>
                 </Grid>

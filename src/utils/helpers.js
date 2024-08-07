@@ -1,13 +1,15 @@
 import { formatDistance, parseISO, differenceInDays, format } from 'date-fns';
+import { enUS, arSA } from 'date-fns/locale';
+import i18next from 'i18next';
 
-// دالة جديدة لتنسيق التاريخ
 export const formatDate = (dateStr) => {
-  // تحويل النص إلى كائن Date
+  let lng = i18next.language
   const date = parseISO(dateStr);
+  const locale = lng === 'ar' ? arSA : enUS;
 
-  // تنسيق التاريخ إلى "MMMM d, yyyy" (مثلاً: "August 3, 2024")
-  return format(date, 'MMMM d, yyyy');
+  return format(date, 'd MMMM, yyyy', { locale });
 };
+
 // We want to make this function work for both Date objects and strings (which come from Supabase)
 export const subtractDates = (dateStr1, dateStr2) =>
   differenceInDays(parseISO(String(dateStr1)), parseISO(String(dateStr2)));

@@ -27,12 +27,12 @@ const Search = () => {
         <InputAdornment position={lng === 'ar' ? 'start' : 'end'}>
             <IconButton
                 sx={{
-                    backgroundColor: theme.palette.secondary.main,
-                    color: theme.palette.primary.main,
+                    backgroundColor: theme.palette.primary.main,
+                    color: theme.palette.primary.text,
                     borderRadius: 2,
                     ':hover': {
-                        backgroundColor: theme.palette.secondary.main,
-                        color: theme.palette.primary.main,
+                        backgroundColor: theme.palette.primary.main,
+                        color: theme.palette.primary.text,
                     }
                 }}
                 onClick={handleSearch}
@@ -45,7 +45,7 @@ const Search = () => {
     return (
         <>
             <TextField
-                label="Search"
+                label={lng === 'en' ? "Search" : 'بحث'}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 sx={{
                     '.MuiInputLabel-formControl': {
