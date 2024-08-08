@@ -8,7 +8,7 @@ import i18next from 'i18next';
 const Intro = ({data}) => {
     const lng = i18next.language
     const btnText = lng === 'en' ? 'See More' : 'المزيد'
-    const { main_title, description, about_section_image, btn_text = btnText, btn_link } = data;
+    const { main_title, description, about_section_image, btn_text = btnText } = data;
 
     return (
         <>
@@ -22,7 +22,7 @@ const Intro = ({data}) => {
                             title={main_title}
                             description={description}
                             text={btn_text}
-                            path={`/${btn_link}` || '/about'}
+                            path={'/about'}
                         />
                     </Grid>
                 </Grid>

@@ -1,6 +1,6 @@
 import * as React from "react";
 import Drawer from "@mui/material/Drawer";
-import { Box, styled } from "@mui/material";
+import { Box, styled, useTheme } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import TransLang from "./TransLang"
 import { Pages } from "../../../constants";
@@ -12,6 +12,7 @@ import DarkModeToggle from "../../global/DarkModeToggle";
 
 export default function NavDrawer({ setDrawer, drawer, data }) {
     let lng = i18next.language
+    const theme = useTheme()
 
     const StyledLink = styled(RouterLink)(({ theme }) => ({
         textDecoration: "none",
@@ -36,6 +37,8 @@ export default function NavDrawer({ setDrawer, drawer, data }) {
                     sx={{
                         '.MuiDrawer-paper': {
                             height: '80% !important ',
+                            backgroundColor: theme.palette.primary.main,
+
                             borderBottomRightRadius: '16px',
                             overflowY: 'auto'
                         }

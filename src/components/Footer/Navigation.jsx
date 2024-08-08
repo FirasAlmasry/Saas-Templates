@@ -17,7 +17,7 @@ const Navigation = () => {
     }
     return (
         <Box sx={{ position: 'relative', zIndex: 2 }}>
-            <Typography variant='h6' color={'primary.main'} mb={1} mt={2}>{lng === 'en' ?'Navigation':'الصفحات'}</Typography>
+            <Typography variant='h6' color={'secondary.main'} mb={1} mt={2}>{lng === 'en' ?'Navigation':'الصفحات'}</Typography>
             <Box sx={{display:'flex', flexDirection:'column', gap:1}}>
                 {Pages?.map((page, i) => (
                     <Link

@@ -2,7 +2,6 @@ import { Box, CardMedia } from '@mui/material'
 import React from 'react'
 
 const Image = ({img}) => {
-console.log("🚀 ~ Image ~ img:", img)
 
     return (
         <Box position="relative">

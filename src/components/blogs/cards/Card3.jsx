@@ -44,7 +44,7 @@ const Card3 = ({ blogs = {} }) => {
                             gutterBottom
                             color={'primary.main'}
                             component="div"
-                            sx={{ textTransform: 'uppercase' }}
+                            sx={{ textTransform: 'capitalize' }}
                         >
                             {title}
                         </Typography>

@@ -34,8 +34,8 @@ function Navbar4({data}) {
             backgroundImage: `linear-gradient(to right, ${theme.palette.nav.main} 100%, transparent calc(50% + 60px))`,
             position: 'absolute',
             width: '100%',
-            height: '6rem',
-            top: '0.3rem',
+            height: '5.5rem',
+            top: '0rem',
             borderRadius: '50px',
             left: language === 'ar' ? '-17%' : '17%',
             transform: language === 'ar' ? 'translateX(50%)' : 'translateX(-50%)',
@@ -56,7 +56,7 @@ function Navbar4({data}) {
             <AppBar position="static" elevation={0}
                 style={{
                     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-                    position:'sticky',
+                    position:'fixed',
                     top:0,
                     zIndex: 999, 
                     backgroundColor:'transparent'

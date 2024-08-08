@@ -43,7 +43,7 @@ const Sliders = ({ data }) => {
                         <CardMedia
                             sx={{
                                 height: {
-                                    md: "45rem", xs: "300px",
+                                    md: "75dvh", xs: "60dvh",
                                 },
                                 width: "100%",
                                 objectFit: "cover",

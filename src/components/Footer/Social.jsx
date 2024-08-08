@@ -16,14 +16,14 @@ const Social = ({ data }) => {
   display: flex;
   align-items: center;
   padding: 8px;
-  border: 1px solid ${theme.palette.primary.main};
+  border: 1px solid ${theme.palette.secondary.main};
   border-radius: 5px;
   transition: transform 0.3s ease, background-color 0.3s ease;
   cursor: pointer;
 
   &:hover {
     transform: scale(1.05);
-    background-color: ${theme.palette.primary.main};
+    background-color: ${theme.palette.secondary.main};
   }
 
   svg {

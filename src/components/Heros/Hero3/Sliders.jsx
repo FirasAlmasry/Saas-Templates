@@ -50,7 +50,7 @@ const Sliders = ({ data }) => {
                             key={i}
                             sx={{
                                 height: {
-                                    md: "35rem", xs: "300px",
+                                    md: "75dvh", xs: "60dvh",
                                 },
                                 width: "100%",
                                 objectFit: "cover",

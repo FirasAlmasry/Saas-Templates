@@ -90,7 +90,7 @@ function Navbar3({data}) {
                                     <img src={data?.header_logo} alt="logo" className="nav-logo" ></img>
                                 </RouterLink>
                                 <IconButton onClick={() => setDrawer(true)}>
-                                    <MenuIcon sx={{ fontSize: '2rem', color: theme.palette.primary.main }} />
+                                    <MenuIcon sx={{ fontSize: '2rem', color: theme.palette.secondary.main }} />
                                 </IconButton>
                             </Box>
                         </Box>

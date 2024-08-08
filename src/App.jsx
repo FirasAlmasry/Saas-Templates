@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useEffect, useMemo } from 'react';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+// import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 // import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { HelmetProvider } from 'react-helmet-async';
@@ -49,7 +49,7 @@ function App() {
       
       <DarkModeProvider>
         <QueryClientProvider client={queryClient}>
-          <ReactQueryDevtools initialIsOpen={false} buttonPosition='top-left' />
+          {/* <ReactQueryDevtools initialIsOpen={false} buttonPosition='top-left' /> */}
           <CssBaseline />
           <HelmetProvider>
             <BrowserRouter>

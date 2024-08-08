@@ -4,8 +4,6 @@ import Btn from '../../global/Buttons/Btn'
 import { useTheme as themeMobile } from '@emotion/react'
 
 const HeroText = ({ title, desc, btn, path }) => {
-console.log("🚀 ~ HeroText ~ path:", path)
-
     const themeM = themeMobile();
     const isMobile = useMediaQuery(themeM.breakpoints.down('sm'));
 
@@ -30,7 +28,7 @@ console.log("🚀 ~ HeroText ~ path:", path)
         <>
             <StyledBox>
                 <Typography variant={isMobile ? 'h6' : 'h3'} color={'primary.text'} >{title}</Typography>
-                <Typography variant={'body1'} color={'secondary.text'} >{desc}</Typography>
+                <Typography variant={'body1'} color={'secondary.text'} sx={{ display: isMobile && 'none' }} >{desc}</Typography>
                 <Btn text={btn} path={`${path}`} />
             </StyledBox>
         </>

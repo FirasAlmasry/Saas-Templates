@@ -1,6 +1,6 @@
 import * as React from "react";
 import Drawer from "@mui/material/Drawer";
-import { Box, styled } from "@mui/material";
+import { Box, styled, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
 import TransLang from "./TransLang"
 import { Pages } from "../../../constants";
@@ -11,6 +11,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import DarkModeToggle from "../../global/DarkModeToggle";
 
 export default function NavDrawer({ setDrawer, drawer, data }) {
+    const theme = useTheme()
 
     const StyledLink = styled(Link)(({ theme }) => ({
         textDecoration: "none",
@@ -31,21 +32,23 @@ export default function NavDrawer({ setDrawer, drawer, data }) {
                     anchor={lng === 'en' ? 'left' : 'right'}
                     open={drawer}
                     onClose={() => setDrawer(false)}
-                    sx={{ 
+                    sx={{
                         '.MuiDrawer-paper': {
                             height: '80% !important ',
                             borderBottomRightRadius: '16px',
+                            backgroundColor: theme.palette.primary.main,
+
                             overflowY: 'auto'
                         }
                     }}
-                    >
+                >
                     <Box
                         sx={{
                             width: 300,
                             gap: 3,
                             display: "flex",
                             flexDirection: "column",
-                            textAlign:  lng === 'en' ? 'left' : 'right',
+                            textAlign: lng === 'en' ? 'left' : 'right',
                             padding: "40px 20px",
                         }}>
                         <Box
@@ -57,7 +60,7 @@ export default function NavDrawer({ setDrawer, drawer, data }) {
                                 alignItems: "center",
                             }}>
                             <Link to="/">
-                                <img src={data?.header_logo} style={{ height:'fit-contain' }} alt="logo" className="nav-logo" ></img>
+                                <img src={data?.header_logo} style={{ height: 'fit-contain' }} alt="logo" className="nav-logo" ></img>
                             </Link>
                             <IconButton onClick={() => setDrawer(false)}>
                                 <CloseIcon />

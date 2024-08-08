@@ -2,13 +2,21 @@ import React, { Suspense } from 'react'
 import LoadingPage from '../global/LoadingPage';
 import importComponent from '../../utils/importComponent';
 import { useBasicData } from '../../hooks/useBasicData';
+import { useNameSection } from '../../hooks/useNameSection';
 
 const NavBar = () => {
-    const { isLoading, basicData } = useBasicData()
-    if(isLoading) return <LoadingPage />
-    const nameSection = { navbarSection: 'Navbar1', }
+    // const nameSection = { navbarSection: 'Navbar1', }
+    const { isLoading: isLoadingNameSection, nameSection } = useNameSection('navbar');
 
-    const Component = importComponent(`/NavBars/${nameSection.navbarSection}/${nameSection.navbarSection}`);
+    const { sections } = nameSection?.data || {};
+
+    const navbar = {
+        navbarSection: sections?.find(section => section.name.includes('navbar'))?.component?.[0]?.name,
+    };
+    const { isLoading, basicData } = useBasicData()
+    if (isLoading || isLoadingNameSection) return <LoadingPage />
+
+    const Component = importComponent(`/NavBars/${navbar.navbarSection}/${navbar.navbarSection}`);
 
     return (
         <Suspense fallback={<LoadingPage />}>

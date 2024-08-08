@@ -9,7 +9,7 @@ const DarkModeContext = createContext();
 export const useDarkMode = () => useContext(DarkModeContext);
 
 export const DarkModeProvider = ({ children }) => {
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: light)');
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
   const [isDarkMode, setIsDarkMode] = useState(prefersDarkMode);
 
   useEffect(() => {
@@ -20,7 +20,8 @@ export const DarkModeProvider = ({ children }) => {
     setIsDarkMode(!isDarkMode);
   };
 
-  const currentTheme = theme(isDarkMode ? 'dark' : 'light');
+  const currentTheme = theme('light');
+  // const currentTheme = theme(isDarkMode ? 'dark' : 'light');
 
   return (
     <DarkModeContext.Provider value={{ isDarkMode, toggleDarkMode }}>
