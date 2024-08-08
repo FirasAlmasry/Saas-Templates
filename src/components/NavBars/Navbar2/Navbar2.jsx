@@ -26,7 +26,12 @@ function Navbar2({data}) {
             textDecoration: 'underline',
         },
     }));
-
+const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
     return (
         <>
             <AppBar position="static" elevation={0} sx={{
@@ -58,6 +63,7 @@ function Navbar2({data}) {
                             <StyledLink
                                 key={i}
                                 to={page.path}
+                                 onClick={() => scrollToTop()}
                             >
                                 {lng === 'ar' ? page.name : page.name_en}
                             </StyledLink>

@@ -47,7 +47,12 @@ function Navbar4({data}) {
             },
         },
     }));
-
+const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
     let lng = i18next.language
     const [drawer, setDrawer] = useState(false);
     return (
@@ -85,7 +90,8 @@ function Navbar4({data}) {
                                 {
                                     Pages?.map((page, i) => <StyledLink
                                         key={i}
-                                        to={page.path}>
+                                        to={page.path}
+                                         onClick={() => scrollToTop()}>
                                         {lng === 'ar' ? page.name : page.name_en}
                                     </StyledLink>
                                     )}
